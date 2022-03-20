@@ -1,7 +1,11 @@
 package com.squad19.mangut.entities;
 
 import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "tb_cesta")
 public class Cesta {
 
 	@EmbeddedId
