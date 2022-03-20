@@ -11,7 +11,7 @@ import com.squad19.mangut.repositories.CategoriaRepository;
 
 @Service
 public class CategoriaService {
-	
+
 	@Autowired
 	private CategoriaRepository repository;
 

@@ -12,7 +12,7 @@ import com.squad19.mangut.repositories.ClienteRepository;
 
 @Service
 public class ClienteService {
-	
+
 	@Autowired
 	private ClienteRepository repository;
 
@@ -21,7 +21,7 @@ public class ClienteService {
 		List<Cliente> resultado = repository.findAll();
 		return resultado;
 	}
-	
+
 	@Transactional(readOnly = true)
 	public Optional<Cliente> findById(Long id) {
 		return repository.findById(id);
@@ -32,9 +32,7 @@ public class ClienteService {
 		return repository.save(cliente);
 	}
 
-	
 	public void delete(Long id) {
 		repository.deleteById(id);
 	}
-	
 }
