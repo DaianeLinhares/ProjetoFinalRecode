@@ -7,7 +7,7 @@ import javax.persistence.Table;
 @Table(name = "tb_cliente")
 public class Cliente {
 
-	private ClientePK id = new ClientePK();
+	private Long id;
 	private String nome;
 	private String email;
 	private String senha;
@@ -16,18 +16,18 @@ public class Cliente {
 
 	}
 
-	public Cliente(ClientePK id, String nome, String email, String senha) {
+	public Cliente(Long id, String nome, String email, String senha) {
 		this.id = id;
 		this.nome = nome;
 		this.email = email;
 		this.senha = senha;
 	}
 
-	public ClientePK getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(ClientePK id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -54,4 +54,5 @@ public class Cliente {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
+
 }
