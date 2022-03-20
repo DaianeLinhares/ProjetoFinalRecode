@@ -1,4 +1,6 @@
-INSERT INTO tb_categoria(tipo) VALUES ('fruta');
+INSERT INTO tb_categoria(tipo) VALUES ('frutas');
+INSERT INTO tb_categoria(tipo) VALUES ('lugumes');
+INSERT INTO tb_categoria(tipo) VALUES ('verduras');
 
 INSERT INTO tb_vendedor(nome, telefone, email, senha, logradouro, numero_logradouro, bairro, cidade, estado, cep) VALUES ('Frederico', '0767899999', 'fred@gmail.com', 'asdsad7', 'rua pitolomeu', '171', 'boteco', 'bh', 'MG','36444444');
 
