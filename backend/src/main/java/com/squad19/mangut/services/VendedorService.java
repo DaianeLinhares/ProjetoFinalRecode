@@ -20,4 +20,5 @@ public class VendedorService {
 		List<Vendedor> resultado = repository.findAll();
 		return resultado;
 	}
+	
 }
