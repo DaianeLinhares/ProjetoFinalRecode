@@ -1,0 +1,46 @@
+package com.squad19.mangut.entities;
+
+import javax.persistence.EmbeddedId;
+
+public class Cesta {
+
+	@EmbeddedId
+	private CestaPK id = new CestaPK();
+	private Integer quantidade;
+	private Double total;
+
+	private Cesta() {
+
+	}
+
+	public Cesta(CestaPK id, Integer quantidade, Double total) {
+		this.id = id;
+		this.quantidade = quantidade;
+		this.total = total;
+	}
+
+	public CestaPK getId() {
+		return id;
+	}
+
+	public void setId(CestaPK id) {
+		this.id = id;
+	}
+
+	public Integer getQuantidade() {
+		return quantidade;
+	}
+
+	public void setQuantidade(Integer quantidade) {
+		this.quantidade = quantidade;
+	}
+
+	public Double getTotal() {
+		return total;
+	}
+
+	public void setTotal(Double total) {
+		this.total = total;
+	}
+
+}
