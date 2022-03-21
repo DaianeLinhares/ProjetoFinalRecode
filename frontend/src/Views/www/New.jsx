@@ -38,7 +38,7 @@ export default () => {
                         </div>
                         <div className="form-group">
                             <input type="submit" value="Enviar" className="btn btn-sm btn-primary rounded-0 text-uppercase" />
-                            <a className="btn btn-sm btn-primary rounded-0 text-uppercase"><i className="fas fa-fast-backward"></i> Voltar para lista</a>
+                            <Link to ="" className ="btn btn-sm btn-primary rounded-0 text-uppercase"><i className="fas fa-fast-backward"></i> Voltar para lista</Link>
                         </div>
                     </form>
                 </div>
