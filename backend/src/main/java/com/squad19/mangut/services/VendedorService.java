@@ -32,7 +32,6 @@ public class VendedorService {
 		return repository.save(vendedor);
 	}
 
-	@Transactional(readOnly = true)
 	public Vendedor update(Vendedor vendedor) {
 		return repository.saveAndFlush(vendedor);
 	}

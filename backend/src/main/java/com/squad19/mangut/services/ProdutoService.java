@@ -33,7 +33,6 @@ public class ProdutoService {
 		return repository.save(produto);
 	}
 	
-	@Transactional(readOnly = true)
 	public Produto update(Produto produto) {
 		return repository.saveAndFlush(produto);
 	}

@@ -33,7 +33,6 @@ public class CestaService {
 		return repository.saveAndFlush(cesta);
 	}
 
-	@Transactional(readOnly = true)
 	public Cesta create(Cesta cesta) {
 		return repository.save(cesta);
 	}

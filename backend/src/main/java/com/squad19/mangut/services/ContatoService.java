@@ -33,7 +33,6 @@ public class ContatoService {
 		return repository.save(contato);
 	}
 	
-	@Transactional(readOnly = true)
 	public Contato update(Contato contato) {
 		return repository.saveAndFlush(contato);
 	}

@@ -36,7 +36,6 @@ public class ClienteService {
 		return repository.save(cliente);
 	}
 	
-	@Transactional(readOnly = true)
 	public Cliente update(Cliente cliente) {
 		return repository.saveAndFlush(cliente);
 	}	
