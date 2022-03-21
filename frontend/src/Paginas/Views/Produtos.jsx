@@ -18,7 +18,7 @@ export default () =>{
 
             <div className="container row ">
                 <div className="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mt-3">
-                    <div className="d-flex justify-content-center" style="position: relative">  <img src="~/images/@produto.ImagemProduto"
+                    <div className="d-flex justify-content-center" style="position: relative">  <img src={"~/images/@produto.ImagemProduto"}
                         height="auto" width="100%" style="border-radius:9px"
                         asp-append-version="true" />
                     </div>

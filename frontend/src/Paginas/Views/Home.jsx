@@ -1,3 +1,4 @@
+import Indigena from "../../../public/img/Indigena.jpg";
 import React from "react";
 
 export default () =>{
@@ -22,7 +23,7 @@ export default () =>{
                     <br></br>O melhor cuidado, vem de quem cuida da nossa terra.
                     <br></br>Abrace essa iniciativa.</p>
             </div>
-            <div className="col-md-6 d-md-flex d-lg-flex align-items-center justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center"><img className="rounded img-fluid shadow" src="~/img/indigena-social.jpg"/></div>
+            <div className="col-md-6 d-md-flex d-lg-flex align-items-center justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center"><img className="rounded img-fluid shadow" src = {Indigena}/></div>
         </div>
 
         </div>
