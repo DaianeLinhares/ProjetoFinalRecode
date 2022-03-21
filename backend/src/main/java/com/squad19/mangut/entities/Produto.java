@@ -13,16 +13,19 @@ public class Produto {
 	private String nome;
 	private Double preco;
 	private String quantidade;
+	private String foto;
 
 	public Produto() {
 
 	}
 
-	public Produto(ProdutoPK id, String nome, Double preco, String quantidade) {
+	public Produto(ProdutoPK id, String nome, Double preco, String quantidade, String foto) {
+		super();
 		this.id = id;
 		this.nome = nome;
 		this.preco = preco;
 		this.quantidade = quantidade;
+		this.foto = foto;
 	}
 
 	public ProdutoPK getId() {
@@ -55,5 +58,13 @@ public class Produto {
 
 	public void setQuantidade(String quantidade) {
 		this.quantidade = quantidade;
+	}
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
 	}
 }

@@ -13,9 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.squad19.mangut.entities.Cliente;
 import com.squad19.mangut.entities.Produto;
-import com.squad19.mangut.entities.Vendedor;
 import com.squad19.mangut.services.ProdutoService;
 
 @RestController
@@ -24,32 +22,31 @@ public class ProdutoController {
 
 	@Autowired
 	ProdutoService service;
-	
+
 	@GetMapping
 	public List<Produto> findAll() {
 		return service.findAll();
 	}
 
 	@GetMapping(value = "/{id}")
-    public Optional<Produto> findById(@PathVariable Long id) {
-        Optional<Produto> produtoId = service.findById(id); 
-        return produtoId;
-    }
-		
-	@PostMapping    
-    public Produto create(@RequestBody Produto produto) {
-        return service.create(produto);
-    }	
-	
-	@PutMapping  
-    public Produto update(@RequestBody Produto produto) {
-        return service.update(produto);
-    }	
-	
-	
-	@DeleteMapping(value = "/{id}")
-    public void delete(@PathVariable Long id) {
-        service.delete(id);        
+	public Optional<Produto> findById(@PathVariable Long id) {
+		Optional<Produto> produtoId = service.findById(id);
+		return produtoId;
 	}
-	
+
+	@PostMapping
+	public Produto create(@RequestBody Produto produto) {
+		return service.create(produto);
+	}
+
+	@PutMapping
+	public Produto update(@RequestBody Produto produto) {
+		return service.update(produto);
+	}
+
+	@DeleteMapping(value = "/{id}")
+	public void delete(@PathVariable Long id) {
+		service.delete(id);
+	}
+
 }
