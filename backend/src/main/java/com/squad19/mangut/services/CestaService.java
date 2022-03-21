@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.squad19.mangut.entities.Cesta;
+import com.squad19.mangut.entities.Vendedor;
 import com.squad19.mangut.repositories.CestaRepository;
 
 @Service
@@ -25,6 +26,11 @@ public class CestaService {
 	@Transactional(readOnly = true)
 	public Optional<Cesta> findById(Long id) {
 		return repository.findById(id);
+	}
+	
+	@Transactional(readOnly = true)
+	public Cesta update(Cesta cesta) {
+		return repository.saveAndFlush(cesta);
 	}
 
 	@Transactional(readOnly = true)

@@ -8,12 +8,14 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.squad19.mangut.entities.Cliente;
 import com.squad19.mangut.entities.Produto;
+import com.squad19.mangut.entities.Vendedor;
 import com.squad19.mangut.services.ProdutoService;
 
 @RestController
@@ -37,6 +39,11 @@ public class ProdutoController {
 	@PostMapping    
     public Produto create(@RequestBody Produto produto) {
         return service.create(produto);
+    }	
+	
+	@PutMapping  
+    public Produto update(@RequestBody Produto produto) {
+        return service.update(produto);
     }	
 	
 	

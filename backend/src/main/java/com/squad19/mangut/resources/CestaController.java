@@ -8,11 +8,13 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.squad19.mangut.entities.Cesta;
+import com.squad19.mangut.entities.Vendedor;
 import com.squad19.mangut.services.CestaService;
 
 @RestController
@@ -37,6 +39,11 @@ public class CestaController {
 	public Cesta create(@RequestBody Cesta cesta) {
 		return service.create(cesta);
 	}
+	
+	@PutMapping  
+    public Cesta update(@RequestBody Cesta cesta) {
+        return service.update(cesta);
+    }	
 
 	@DeleteMapping(value = "/{id}")
 	public void delete(@PathVariable Long id) {

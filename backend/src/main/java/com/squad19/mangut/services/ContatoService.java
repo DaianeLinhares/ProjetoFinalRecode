@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.squad19.mangut.entities.Contato;
+import com.squad19.mangut.entities.Vendedor;
 import com.squad19.mangut.repositories.ContatoRepository;
 
 @Service
@@ -30,6 +31,11 @@ public class ContatoService {
 	@Transactional(readOnly = true)
 	public Contato create(Contato contato) {
 		return repository.save(contato);
+	}
+	
+	@Transactional(readOnly = true)
+	public Contato update(Contato contato) {
+		return repository.saveAndFlush(contato);
 	}
 
 	public void delete(Long id) {
