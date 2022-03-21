@@ -1,9 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import Home from './Paginas/Views/Home';
-ReactDOM.render(<App />, document.getElementById('root'));
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import Home from './Views/www/Home';
+import Busca from './Views/www/Busca';
+import Produtos from './Views/www/Produtos';
+import New from './Views/www/New';
+import QuemSomos from './Views/www/QuemSomos';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+
+
 
 ReactDOM.render(
   <React.StrictMode>
