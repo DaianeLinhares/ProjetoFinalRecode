@@ -37,4 +37,5 @@ public class ProdutoPK implements Serializable {
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
 	}
+	
 }

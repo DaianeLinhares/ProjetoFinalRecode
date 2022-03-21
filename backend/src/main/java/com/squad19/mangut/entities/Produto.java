@@ -1,13 +1,17 @@
 package com.squad19.mangut.entities;
 
+import java.io.Serializable;
+import java.util.Objects;
+
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "tb_produto")
-public class Produto {
-
+public class Produto implements Serializable {
+	private static final long serialVersionUID = 1L;
+	
 	@EmbeddedId
 	private ProdutoPK id = new ProdutoPK();
 	private String nome;
@@ -66,5 +70,22 @@ public class Produto {
 
 	public void setFoto(String foto) {
 		this.foto = foto;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Produto other = (Produto) obj;
+		return Objects.equals(id, other.id);
 	}
 }

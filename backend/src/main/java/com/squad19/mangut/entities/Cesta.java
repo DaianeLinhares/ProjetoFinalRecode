@@ -2,12 +2,16 @@ package com.squad19.mangut.entities;
 
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "tb_cesta")
 public class Cesta {
 
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long cod;
 	@EmbeddedId
 	private CestaPK id = new CestaPK();
 	private Integer quantidade;
