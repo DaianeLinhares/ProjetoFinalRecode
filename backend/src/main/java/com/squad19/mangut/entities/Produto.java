@@ -3,41 +3,64 @@ package com.squad19.mangut.entities;
 import java.io.Serializable;
 import java.util.Objects;
 
-import javax.persistence.EmbeddedId;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "tb_produto")
-public class Produto implements Serializable {
-	private static final long serialVersionUID = 1L;
+public class Produto {
 	
-	@EmbeddedId
-	private ProdutoPK id = new ProdutoPK();
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "produtoid")
+	private Long produtoId;
+	
+	@Column(name = "nome")
 	private String nome;
+	
+	@Column(name = "preco")
 	private Double preco;
-	private String quantidade;
+	
+	@Column(name = "quantidade")
+	private Integer quantidade;
+	
 	private String foto;
+	
+	// relacionamento com categoria
+		@ManyToOne
+		@JoinColumn(name = "categoriaid", referencedColumnName = "categoriaid")
+		private Categoria categoria;
 
 	public Produto() {
 
 	}
+	
+	
 
-	public Produto(ProdutoPK id, String nome, Double preco, String quantidade, String foto) {
-		super();
-		this.id = id;
+	public Produto(Long produtoId, String nome, Double preco, Integer quantidade, String foto, Categoria categoria) {
+		this.produtoId = produtoId;
 		this.nome = nome;
 		this.preco = preco;
 		this.quantidade = quantidade;
 		this.foto = foto;
+		this.categoria = categoria;
 	}
 
-	public ProdutoPK getId() {
-		return id;
+
+
+	public Long getProdutoId() {
+		return produtoId;
 	}
 
-	public void setId(ProdutoPK id) {
-		this.id = id;
+	public void setProdutoId(Long produtoId) {
+		this.produtoId = produtoId;
 	}
 
 	public String getNome() {
@@ -56,11 +79,11 @@ public class Produto implements Serializable {
 		this.preco = preco;
 	}
 
-	public String getQuantidade() {
+	public Integer getQuantidade() {
 		return quantidade;
 	}
 
-	public void setQuantidade(String quantidade) {
+	public void setQuantidade(Integer quantidade) {
 		this.quantidade = quantidade;
 	}
 
@@ -72,20 +95,13 @@ public class Produto implements Serializable {
 		this.foto = foto;
 	}
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(id);
+	public Categoria getCategoria() {
+		return categoria;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Produto other = (Produto) obj;
-		return Objects.equals(id, other.id);
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
 	}
+
+	
 }

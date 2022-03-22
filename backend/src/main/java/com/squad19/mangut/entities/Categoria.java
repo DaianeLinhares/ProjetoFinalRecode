@@ -1,39 +1,43 @@
 package com.squad19.mangut.entities;
 
-import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "tb_categoria")
-public class Categoria implements Serializable{
-	private static final long serialVersionUID = 1L;
+public class Categoria{
+	
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	@Column(name = "categoriaid")
+	private Long categoriaId;
+	
+	@Column(name = "tipo")
 	private String tipo;
+	
+	//relacionamento com produto
+    @OneToMany(mappedBy = "categoria")
+    private List<Produto> listProduto;
 
 	public Categoria() {
 
 	}
 
-	public Categoria(Long id, String tipo) {
-		this.id = id;
-		this.tipo = tipo;
+	public Long getCategoriaId() {
+		return categoriaId;
 	}
 
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
+	public void setCategoriaId(Long categoriaId) {
+		this.categoriaId = categoriaId;
 	}
 
 	public String getTipo() {
@@ -44,21 +48,14 @@ public class Categoria implements Serializable{
 		this.tipo = tipo;
 	}
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(id);
+	public List<Produto> getListProduto() {
+		return listProduto;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Categoria other = (Categoria) obj;
-		return Objects.equals(id, other.id);
+	public void setListProduto(List<Produto> listProduto) {
+		this.listProduto = listProduto;
 	}
 	
+	
+
 }
