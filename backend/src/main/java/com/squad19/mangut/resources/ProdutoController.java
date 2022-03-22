@@ -17,7 +17,7 @@ import com.squad19.mangut.entities.Produto;
 import com.squad19.mangut.services.ProdutoService;
 
 @RestController
-@RequestMapping("/produtos")
+@RequestMapping(value = "/produtos")
 public class ProdutoController {
 
 	@Autowired

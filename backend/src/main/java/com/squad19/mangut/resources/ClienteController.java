@@ -22,7 +22,7 @@ import com.squad19.mangut.repositories.ClienteRepository;
 import com.squad19.mangut.services.ClienteService;
 
 @RestController
-@RequestMapping("/clientes")
+@RequestMapping(value = "/clientes")
 public class ClienteController {
 
 	@Autowired
@@ -46,27 +46,32 @@ public class ClienteController {
         return clienteId;
     }
 	
-	@PostMapping("/salvar")
-	public ResponseEntity<Cliente> create(@RequestBody Cliente cliente) {
-		cliente.setSenha(encoder.encode(cliente.getSenha()));
-		return ResponseEntity.ok(repository.save(cliente));
-	}
+	/*
+	 * @PostMapping("/salvar") public ResponseEntity<Cliente> create(@RequestBody
+	 * Cliente cliente) { cliente.setSenha(encoder.encode(cliente.getSenha()));
+	 * return ResponseEntity.ok(repository.save(cliente)); }
+	 */
 	
-	@GetMapping("/validarSenha")
-	public ResponseEntity<Boolean> validarSenha(@RequestParam String email, @RequestParam String senha){
-		
-		Optional<Cliente> optCliente = repository.findByEmail(email);
-		if(optCliente.isEmpty()) {
-			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(false);
-		}
-		
-		 
-		Cliente cliente = optCliente.get();
-		boolean valid = encoder.matches(senha, cliente.getSenha());
-		
-		HttpStatus status = (valid) ? HttpStatus.OK : HttpStatus.UNAUTHORIZED;	
-		return ResponseEntity.status(status).body(valid);
-	}		
+	@PostMapping    
+    public Cliente create(@RequestBody Cliente cliente) {
+        return service.create(cliente);
+    }	
+	
+	/*
+	 * @GetMapping("/validarSenha") public ResponseEntity<Boolean>
+	 * validarSenha(@RequestParam String email, @RequestParam String senha){
+	 * 
+	 * Optional<Cliente> optCliente = repository.findByEmail(email);
+	 * if(optCliente.isEmpty()) { return
+	 * ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(false); }
+	 * 
+	 * 
+	 * Cliente cliente = optCliente.get(); boolean valid = encoder.matches(senha,
+	 * cliente.getSenha());
+	 * 
+	 * HttpStatus status = (valid) ? HttpStatus.OK : HttpStatus.UNAUTHORIZED; return
+	 * ResponseEntity.status(status).body(valid); }
+	 */
 	
 	
 	@PutMapping  

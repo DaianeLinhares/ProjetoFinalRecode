@@ -1,8 +1,5 @@
 package com.squad19.mangut.entities;
 
-import java.io.Serializable;
-import java.util.Objects;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -34,9 +31,12 @@ public class Produto {
 	private String foto;
 	
 	// relacionamento com categoria
-		@ManyToOne
-		@JoinColumn(name = "categoriaid", referencedColumnName = "categoriaid")
-		private Categoria categoria;
+	
+	  @ManyToOne
+	  
+	  @JoinColumn(name = "categoriaid", referencedColumnName = "categoriaid")
+	  private Categoria categoria;
+	 
 
 	public Produto() {
 
@@ -95,13 +95,11 @@ public class Produto {
 		this.foto = foto;
 	}
 
-	public Categoria getCategoria() {
-		return categoria;
-	}
-
-	public void setCategoria(Categoria categoria) {
-		this.categoria = categoria;
-	}
+	
+	  public Categoria getCategoria() { return categoria; }
+	  
+	  public void setCategoria(Categoria categoria) { this.categoria = categoria; }
+	 
 
 	
 }

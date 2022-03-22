@@ -1,7 +1,6 @@
 package com.squad19.mangut.entities;
 
 import java.util.List;
-import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -25,8 +24,9 @@ public class Categoria{
 	private String tipo;
 	
 	//relacionamento com produto
-    @OneToMany(mappedBy = "categoria")
-    private List<Produto> listProduto;
+	
+	  @OneToMany(mappedBy = "categoria") private List<Produto> listProduto;
+	 
 
 	public Categoria() {
 
@@ -48,13 +48,12 @@ public class Categoria{
 		this.tipo = tipo;
 	}
 
-	public List<Produto> getListProduto() {
-		return listProduto;
-	}
-
-	public void setListProduto(List<Produto> listProduto) {
-		this.listProduto = listProduto;
-	}
+	
+	  public List<Produto> getListProduto() { return listProduto; }
+	  
+	  public void setListProduto(List<Produto> listProduto) { this.listProduto =
+	  listProduto; }
+	 
 	
 	
 

@@ -39,4 +39,10 @@ public class ClienteService {
 	public void delete(Long id) {
 		repository.deleteById(id);
 	}
+	
+	// tentativa de colocar o save
+	@Transactional(readOnly = true)
+	public Cliente create(Cliente cliente) {
+		return repository.save(cliente);
+	}
 }
