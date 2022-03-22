@@ -1,0 +1,22 @@
+
+
+.nav-cor {
+    background-color: #122a57;
+}
+
+nav ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+/* nav ul li a:hover {
+    text-decoration: solid;   
+} */
+
+
+.df{
+    display: flex;
+}
+nav a {
+        text-decoration: none;
+}
