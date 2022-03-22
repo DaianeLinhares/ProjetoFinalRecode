@@ -7,8 +7,6 @@ import New from './Views/www/New';
 import QuemSomos from './Views/www/QuemSomos';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
-
-
 ReactDOM.render(
   <React.StrictMode>
     <Router>

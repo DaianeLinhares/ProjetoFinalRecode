@@ -1,4 +1,4 @@
-import Indigena from "../../../public/img/Indigena.jpg";
+import Indigena from "../../../assets/img/indigena.png";
 import React from "react";
 
 export default () =>{
