@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import NavLink from '../NavHandler/NavHandler';
 
 import './Main.css';
 
@@ -55,6 +56,8 @@ export default props => {
                                 </span>Início
                             </Link>
                         </li>
+                        <NavLink name="Sobre nós" link="/QuemSomos"></NavLink>
+                        <NavLink name="Sobre nós" link="/QuemSomos"></NavLink>
                     </ul>
                 </div>
             </div>

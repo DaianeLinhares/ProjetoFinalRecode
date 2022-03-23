@@ -54,7 +54,7 @@ const Formulario = () => {
 
                     <div className="input-group flex-nowrap mt-4">
                         <span className="input-group-text" id="addon-wrapping">Senha</span>
-                        <input required type="text" className="form-control" ref={senha} placeholder="Endereço" aria-label="Endereço" aria-describedby="addon-wrapping" />
+                        <input required type="password" className="form-control" ref={senha} placeholder="Endereço" aria-label="Endereço" aria-describedby="addon-wrapping" />
                     </div>
 
                     <div className="input-group flex-nowrap mt-4">
