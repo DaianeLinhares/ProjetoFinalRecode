@@ -1,7 +1,7 @@
 import Footer from "../../Components/Footer/Footer"
-import FormCadastro from "../../Components/FormCadastro/FormCadastro"
 import Header from "../../Components/Header/Header"
 import Navbar from "../../Components/Navbar/Main/Main"
+import FormCadastro from "../../Components/FormCadastro/FormCadastro"
 
 
 // eslint-disable-next-line import/no-anonymous-default-export

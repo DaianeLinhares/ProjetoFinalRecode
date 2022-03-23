@@ -7,7 +7,7 @@ export default ()=>{
     return(
         <>
             <Header></Header>
-            <Navbar></Navbar>
+            <Navbar page="Home"></Navbar>
             <Main></Main>
             <Footer></Footer>
         </>

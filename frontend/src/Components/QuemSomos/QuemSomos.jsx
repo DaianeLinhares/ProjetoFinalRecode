@@ -1,4 +1,5 @@
-
+import React from 'react';
+import { Link } from 'react-router-dom'; 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
   return (
@@ -23,11 +24,11 @@ export default () => {
 
             <h3 class="text-success"><br />Valores</h3>
             <p> Respeitamos o direito de escolha, de privacidade e incentivamos a liberdade de negociação entre vendedores e compradores. 
-            <b />Motivamos a sociedade a apoiar o comércio de produtos vindos de povos originários e, ao mesmo tempo, facilitar a inserção desses indivíduos e/ou de suas comunidades no mundo digital, ao criarmos uma ponte de comunicação eficiente e realista de quem não está acostumado com plataformas de e-commerce.
+            <b>Motivamos</b> a sociedade a apoiar o comércio de produtos vindos de povos originários e, ao mesmo tempo, facilitar a inserção desses indivíduos e/ou de suas comunidades no mundo digital, ao criarmos uma ponte de comunicação eficiente e realista de quem não está acostumado com plataformas de e-commerce.
 
-            <b />Acreditamos que o impacto sociocultural na transformação de vidas, é mais importante do que monopolizar um serviço, em prol da rentabilidade da plataforma e dados analíticos.</p> 
+            <b>Acreditamos</b> que o impacto sociocultural na transformação de vidas, é mais importante do que monopolizar um serviço, em prol da rentabilidade da plataforma e dados analíticos.</p> 
         </div>     
-        </main>
+      </main>
     </>
   );
 };

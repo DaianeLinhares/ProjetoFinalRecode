@@ -1,3 +1,6 @@
+import React from 'react';
+
+
 import Header from "../../Components/Header/Header"
 import Navbar from "../../Components/Navbar/Main/Main"
 import Footer from "../../Components/Footer/Footer"
@@ -7,7 +10,7 @@ export default ()=>{
     return(
         <>
         <Header></Header>
-        <Navbar></Navbar>
+        <Navbar page="QuemSomos"></Navbar>
         <QuemSomos></QuemSomos>
         <Footer></Footer>
         </>
