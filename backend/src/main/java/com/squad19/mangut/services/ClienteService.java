@@ -41,8 +41,8 @@ public class ClienteService {
 	}
 	
 	// tentativa de colocar o save
-	@Transactional(readOnly = true)
-	public Cliente create(Cliente cliente) {
-		return repository.save(cliente);
-	}
+	/*
+	 * @Transactional(readOnly = true) public Cliente create(Cliente cliente) {
+	 * return repository.save(cliente); }
+	 */
 }
