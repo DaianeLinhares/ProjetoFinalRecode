@@ -14,11 +14,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.squad19.mangut.entities.Cesta;
-import com.squad19.mangut.entities.Vendedor;
 import com.squad19.mangut.services.CestaService;
 
 @RestController
-@RequestMapping("/cesta")
+@RequestMapping(value = "/cesta")
 public class CestaController {
 
 	@Autowired
