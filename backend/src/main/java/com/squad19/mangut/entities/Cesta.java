@@ -16,9 +16,9 @@ public class Cesta {
 	private CestaPK id = new CestaPK();
 	private Integer quantidade;
 	private Double total;
-
-	private Cesta() {
-
+	
+	public Cesta() {
+		
 	}
 
 	public Cesta(CestaPK id, Integer quantidade, Double total) {
