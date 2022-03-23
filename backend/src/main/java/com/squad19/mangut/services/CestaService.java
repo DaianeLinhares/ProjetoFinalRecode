@@ -27,7 +27,7 @@ public class CestaService {
 		return repository.findById(id);
 	}
 	
-	@Transactional(readOnly = true)
+	
 	public Cesta update(Cesta cesta) {
 		return repository.saveAndFlush(cesta);
 	}
