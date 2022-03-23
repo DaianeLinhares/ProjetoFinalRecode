@@ -3,7 +3,6 @@ import api from '../../services/api'
 import 'bootstrap/dist/css/bootstrap.css';
 
 
-// eslint-disable-next-line import/no-anonymous-default-export
 const Formulario = () => {
 
     const nome = useRef()
