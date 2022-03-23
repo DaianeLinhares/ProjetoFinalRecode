@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.squad19.mangut.entities.Cesta;
-import com.squad19.mangut.entities.Vendedor;
 import com.squad19.mangut.repositories.CestaRepository;
 
 @Service

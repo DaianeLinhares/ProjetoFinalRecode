@@ -17,13 +17,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.squad19.mangut.entities.Cliente;
 import com.squad19.mangut.entities.Vendedor;
 import com.squad19.mangut.repositories.VendedorRepository;
 import com.squad19.mangut.services.VendedorService;
 
 @RestController
-@RequestMapping("/vendedores")
+@RequestMapping(value = "/vendedores")
 public class VendedorController {
 
 	@Autowired
