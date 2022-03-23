@@ -19,7 +19,7 @@ const Formulario = () => {
 
     function enviarDados(event) {
         event.preventDefault()
-        api.post("/clientes/salvar/", {
+        api.post("/vendedores/salvar/", {
             nome: nome.current.value,
             telefone: telefone.current.value,
             email: email.current.value,
@@ -37,7 +37,7 @@ const Formulario = () => {
         <>
             <main className="vh-100 ">
                 <form className="col-8 container" onSubmit={enviarDados}>
-                    <h1 className="display-3 mt-4">Cadastrar Cliente</h1>
+                    <h1 className="display-3 mt-4">Cadastrar Vendedor</h1>
                     <div className="input-group flex-nowrap mt-4">
                         <span className="input-group-text" id="addon-wrapping">Nome</span>
                         <input required type="text" className="form-control" ref={nome} placeholder="Nome" aria-label="Username" aria-describedby="addon-wrapping" />
