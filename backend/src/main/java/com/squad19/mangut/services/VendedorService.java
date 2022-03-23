@@ -4,9 +4,11 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.squad19.mangut.entities.Cliente;
 import com.squad19.mangut.entities.Vendedor;
 import com.squad19.mangut.repositories.VendedorRepository;
 
@@ -16,10 +18,14 @@ public class VendedorService {
 	@Autowired
 	VendedorRepository repository;
 
+	/*
+	 * @Transactional(readOnly = true) public List<Vendedor> findAll() {
+	 * List<Vendedor> resultado = repository.findAll(); return resultado; }
+	 */
+	
 	@Transactional(readOnly = true)
-	public List<Vendedor> findAll() {
-		List<Vendedor> resultado = repository.findAll();
-		return resultado;
+	public ResponseEntity<List<Vendedor>> findAll() {
+		return ResponseEntity.ok(repository.findAll());		
 	}
 
 	@Transactional(readOnly = true)
@@ -27,10 +33,10 @@ public class VendedorService {
 		return repository.findById(id);
 	}
 
-	@Transactional(readOnly = true)
-	public Vendedor create(Vendedor vendedor) {
-		return repository.save(vendedor);
-	}
+	/*
+	 * @Transactional(readOnly = true) public Vendedor create(Vendedor vendedor) {
+	 * return repository.save(vendedor); }
+	 */
 
 	public Vendedor update(Vendedor vendedor) {
 		return repository.saveAndFlush(vendedor);

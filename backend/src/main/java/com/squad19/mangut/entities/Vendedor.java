@@ -25,6 +25,7 @@ public class Vendedor {
 	private String cidade;
 	private String estado;
 	private String cep;
+	
 	public Long getId() {
 		return id;
 	}
