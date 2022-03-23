@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import api from "../../services/api";
 
-// eslint-disable-next-line import/no-anonymous-default-export
 const Formulario = () => {
   const [cliente, setClientes] = useState([]);
 
