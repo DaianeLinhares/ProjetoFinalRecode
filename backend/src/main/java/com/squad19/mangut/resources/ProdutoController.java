@@ -34,7 +34,7 @@ public class ProdutoController {
 		return produtoId;
 	}
 
-	@PostMapping
+	@PostMapping("/produtos")
 	public Produto create(@RequestBody Produto produto) {
 		return service.create(produto);
 	}
