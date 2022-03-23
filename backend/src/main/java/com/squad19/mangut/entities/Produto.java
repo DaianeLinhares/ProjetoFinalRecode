@@ -1,5 +1,7 @@
 package com.squad19.mangut.entities;
 
+import java.util.Objects;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -94,6 +96,25 @@ public class Produto {
 
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(categoria, foto, nome, preco, produtoId, quantidade);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Produto other = (Produto) obj;
+		return Objects.equals(categoria, other.categoria) && Objects.equals(foto, other.foto)
+				&& Objects.equals(nome, other.nome) && Objects.equals(preco, other.preco)
+				&& Objects.equals(produtoId, other.produtoId) && Objects.equals(quantidade, other.quantidade);
 	}
 
 }
