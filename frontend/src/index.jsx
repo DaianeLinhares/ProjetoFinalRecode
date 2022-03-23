@@ -5,6 +5,7 @@ import Contatos from './Pages/Contatos/Contatos';
 import Cadastro from './Pages/Cadastro/Cadastro';
 import Admin from './Pages/Admin/index';
 import QuemSomos from './Pages/QuemSomos/QuemSomos';
+import Produtos from './Pages/Produtos/Produtos';
 import Proximidade from './Pages/Proximidade/Proximidade';
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
@@ -21,6 +22,7 @@ ReactDOM.render(
     <Route path='/Admin' element={<Admin/>}></Route>
     <Route path='/Proximidades' element={<Proximidade/>}></Route>
     <Route path='/QuemSomos' element={<QuemSomos/>}></Route>
+    <Route path='/Produtos' element={<Produtos/>}></Route>
   </Routes>
 </Router>
 
