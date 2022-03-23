@@ -1,0 +1,17 @@
+.banner-logo {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    filter: drop-shadow(3px 3px 4px rgba(0,0,0,0.5)) brightness(3.1);
+}
+.bi.bi-person-bounding-box {
+    color: #12ad69;
+    font-size: 90px;
+    text-shadow: 0px 0px 3px #f2ebe4;
+    border-style: none;
+    border-color: var(--bs-green);
+}
+.logo-header-text {
+    color: var(--km-bg);
+    text-shadow: 0px 0px 3px #80b88d, 0px 0px 4px var(--bs-green), 0px 0px 4px var(--bs-green);
+}
