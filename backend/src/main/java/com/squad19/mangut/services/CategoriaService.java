@@ -27,7 +27,7 @@ public class CategoriaService {
 		return repository.findById(id);
 	}
 
-	@Transactional(readOnly = true)
+	
 	public Categoria create(Categoria categoria) {
 		return repository.save(categoria);
 	}
