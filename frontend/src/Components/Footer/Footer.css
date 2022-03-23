@@ -1,0 +1,59 @@
+.footer1{
+    width: 100%;
+    height: auto;
+    background: white;
+    position: relative;
+    bottom: -113px;
+    margin-top: 86px;
+    padding-top: 26px;
+    padding-bottom: 16px;
+    box-shadow: 0 -5px 55px rgba(22,22,22,0.22);
+}
+
+.footer2{
+    text-shadow: 1px 1px 1px rgba(34,34,34,0.16), 2px 2px 4px var(--km-primary);
+    text-align: justify !important;
+}
+
+.footer3{
+    /*background-color: #008000;*/
+    color: #000
+}
+
+.footer4{
+    margin-bottom: 16px;
+    height: 88px !important;
+    width: auto !important;
+    z-index: 2;
+}
+
+.footer5{
+    text-shadow: 1px 1px 1px rgb(255,138,0);
+    font-size: 15px;
+    position: relative;
+    top: -30px;
+    left: 0px;
+    font-family: 'Alatsi';color: rgb(255,225,2) !important;
+    background: linear-gradient(rgb(112,81,222), rgb(87,64,199));
+    z-index: 2;
+    padding: 0 8px 2px;
+    border-radius: 0 0 6px 6px;
+    text-transform: uppercase;
+    display: block;
+    width: 62px;
+ 
+}
+
+.footer6{
+    height: 32px;
+    image-rendering: crisp-edges;
+    width: auto;
+    position: relative;
+    top: -106px;
+    left: 114px;
+    filter: brightness(1.1) saturate(1.4);
+}
+
+.recodeLogo {
+    width:93px;
+}          
