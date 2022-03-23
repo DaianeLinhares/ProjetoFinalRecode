@@ -27,6 +27,7 @@ public class Produto {
 	@Column(name = "quantidade")
 	private Integer quantidade;
 
+	@Column(name = "foto")
 	private String foto;
 
 	// relacionamento com categoria
