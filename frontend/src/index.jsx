@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Home from './Pages/Home/Home';
 import Contatos from './Pages/Contatos/Contatos';
 import Cadastro from './Pages/Cadastro/Cadastro';
+import CadastroVendedores from './Pages/Cadastro/CadastroVendedores';
 import Admin from './Pages/Admin/index';
 import QuemSomos from './Pages/QuemSomos/QuemSomos';
 import Produtos from './Pages/Produtos/Produtos';
@@ -19,6 +20,7 @@ ReactDOM.render(
     <Route path='/' exact element={<Home/>}></Route>
     <Route path='/Contatos' element={<Contatos/>}></Route>
     <Route path='/Cadastro' element={<Cadastro/>}></Route>
+    <Route path='/CadastroVendedores' element={<CadastroVendedores/>}></Route>
     <Route path='/Admin' element={<Admin/>}></Route>
     <Route path='/Vendedores' element={<Proximidade/>}></Route>
     <Route path='/QuemSomos' element={<QuemSomos/>}></Route>
