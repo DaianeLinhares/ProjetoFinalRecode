@@ -1,6 +1,9 @@
 .sidemenu {
     margin-top: 12px;
 }
+.sidebar .nav-link.active{
+    background: rgba(255,255,255,.3)
+}
 
 #MainButton-Register {
     padding: 3px 16px 5px;

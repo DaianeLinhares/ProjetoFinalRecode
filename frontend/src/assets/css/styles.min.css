@@ -10495,6 +10495,10 @@ textarea.form-control-lg {
     width: 100vw !important;
     padding: 8px;
 }
+.main .container {
+    background: white;
+    box-shadow: 0 0 12px rgb(0 0 0 / 10%);
+}
 .main-menu .container-fluid {
     padding: 0;
     margin: 7px 0
@@ -10503,15 +10507,36 @@ textarea.form-control-lg {
     padding-left: 28px;
     margin: 0 8px;
 }
+.main-menu .nav-link.active {
+    padding: 7px 15px;
+}
 
 body {
     background: #f6e6d8 linear-gradient(90deg, #f6e6d8, transparent, transparent, #f6e6d8)
 }
-.main .container {
-    background: white;
-    box-shadow: 0 0 12px rgb(0 0 0 / 10%);
+h1 {
+	text-align: center;
+	font-family: 'Alatsi';
+	font-weight: bold;
+	color: #ee7105 !important;
+	padding-top: 32px;
+	padding-bottom: 16px; 
 }
-
+h2, h3 {
+	color: #ee7105 !important;
+	font-family: 'Alatsi';
+	
+}
+p {
+	text-align: justify;
+	color: #666;
+	font-weight: 400;
+}
+p b {
+	font-family: 'Calistoga';
+	font-weight: bold;
+	color: #333
+}
 
 @media (max-width: 767px) {
     .website-logo {

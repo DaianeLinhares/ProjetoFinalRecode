@@ -12,8 +12,9 @@ export default props => {
     return(
         <nav class="navbar main-menu navbar-dark navbar-expand-md sticky-top text-center" id="MainMenu">
             <div class="container-fluid">
-                <Link class="navbar-brand d-md-none justify-content-xxl-start" to="/">
-                    <img id="mangutlogo-mobile" alt="logotipo mobile: contém o texto 'Mangut' escrito em fonte cursiva e de cor verde claro" src={MangutName} /><button 
+                <div class="navbar-brand d-md-none justify-content-xxl-start">
+                    <img id="mangutlogo-mobile" alt="logotipo mobile: contém o texto 'Mangut' escrito em fonte cursiva e de cor verde claro" src={MangutName} />
+                    <button type="button"
                         data-bs-toggle="collapse" 
                         class="navbar-toggler" 
                         data-bs-target="#navcol-1"
@@ -32,13 +33,13 @@ export default props => {
                             </path>
                         </svg>
                     </button>
-                </Link>
+                </div>
                 <div class="collapse navbar-collapse text-start" id="navcol-1">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item">
                             <Link to="/" class={
                                 props.page === 'Home' ? 'nav-link active' : 'nav-link'
-                            } style={{background: "rgba(255,255,255,.3);"}}>
+                            }>
                                 <span style={{marginRight: "12px", position: "relative", left: "3px", top: "-2px"}}>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-house-door-fill">
                                         <path d="M6.5 10.995V14.5a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .146-.354l6-6a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 .146.354v7a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5V11c0-.25-.25-.5-.5-.5H7c-.25 0-.5.25-.5.495z"></path>
@@ -47,9 +48,9 @@ export default props => {
                                 </span>Início
                             </Link>
                         </li>
-                        <NavLink name="Produtos" link="/Produtos" active={props.page === "Produtos" ? true : false}/>
-                        <NavLink name="Vendedores" link="/Vendedores" active={props.page === "Vendedores" ? true : false}/>
-                        <NavLink name="Sobre nós" link="/Sobre" active={props.page === "Sobre" ? true : false}/>
+                        <NavLink name="Produtos" link="/Produtos" enable={props.page === "Produtos" ? true : false}/>
+                        <NavLink name="Vendedores" link="/Vendedores" enable={props.page === "Vendedores" ? true : false}/>
+                        <NavLink name="Sobre nós" link="/Sobre" enable={props.page === "Sobre" ? true : false}/>
                     </ul>
                 </div>
             </div>

@@ -10,7 +10,7 @@ export default ()=>{
     return(
         <>
         <Header></Header>
-        <Navbar page="QuemSomos"></Navbar>
+        <Navbar page="Sobre"></Navbar>
         <QuemSomos></QuemSomos>
         <Footer></Footer>
         </>

@@ -8,12 +8,12 @@ export default props => {
     // if enable is true, then the link is active
     return(
         <>
-            <li class={props.enable ? 'nav-link active' : 'nav-link'}>
-                <Link 
+            <li class="nav-item">
+                <Link class={props.enable ? 'nav-link active' : 'nav-link'}
                 to={props.link} 
                 style={{background: "rgba(255,255,255,.3);"}}
                 >
-                    {props.name}
+                    <span></span>{props.name}
                 </Link>
             </li>
         </>

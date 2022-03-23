@@ -16,7 +16,7 @@ export default () => {
                 </div>
                 <Banner></Banner>
             </div>
-            <div class="website-logo d-none d-sm-block"></div>
+            <div class="website-logo d-block"></div>
         </header>
     )
 }
