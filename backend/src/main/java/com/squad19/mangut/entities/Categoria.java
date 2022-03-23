@@ -2,8 +2,10 @@ package com.squad19.mangut.entities;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -12,21 +14,19 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "tb_categoria")
-public class Categoria{
-	
+public class Categoria {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "categoriaid")
 	private Long categoriaId;
-	
+
 	@Column(name = "tipo")
 	private String tipo;
-	
-	//relacionamento com produto
-	
-	  @OneToMany(mappedBy = "categoria") private List<Produto> listProduto;
-	 
+
+	//relacionamento com produto    
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "categoria", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Produto> listProduto;
 
 	public Categoria() {
 
@@ -48,13 +48,12 @@ public class Categoria{
 		this.tipo = tipo;
 	}
 
-	
-	  public List<Produto> getListProduto() { return listProduto; }
-	  
-	  public void setListProduto(List<Produto> listProduto) { this.listProduto =
-	  listProduto; }
-	 
-	
-	
+	public List<Produto> getListProduto() {
+		return listProduto;
+	}
+
+	public void setListProduto(List<Produto> listProduto) {
+		this.listProduto = listProduto;
+	}
 
 }

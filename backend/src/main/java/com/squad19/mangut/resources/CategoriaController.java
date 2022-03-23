@@ -17,7 +17,7 @@ import com.squad19.mangut.entities.Categoria;
 import com.squad19.mangut.services.CategoriaService;
 
 @RestController
-@RequestMapping("/categorias")
+@RequestMapping(value = "/categorias")
 public class CategoriaController {
 
 	@Autowired

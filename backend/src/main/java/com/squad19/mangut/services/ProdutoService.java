@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.squad19.mangut.entities.Produto;
-import com.squad19.mangut.entities.Vendedor;
 import com.squad19.mangut.repositories.ProdutoRepository;
 
 @Service
@@ -32,7 +31,7 @@ public class ProdutoService {
 	public Produto create(Produto produto) {
 		return repository.save(produto);
 	}
-	
+
 	public Produto update(Produto produto) {
 		return repository.saveAndFlush(produto);
 	}

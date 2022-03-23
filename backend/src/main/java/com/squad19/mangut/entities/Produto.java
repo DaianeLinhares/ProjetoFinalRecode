@@ -12,37 +12,31 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "tb_produto")
 public class Produto {
-	
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "produtoid")
 	private Long produtoId;
-	
+
 	@Column(name = "nome")
 	private String nome;
-	
+
 	@Column(name = "preco")
 	private Double preco;
-	
+
 	@Column(name = "quantidade")
 	private Integer quantidade;
-	
+
 	private String foto;
-	
+
 	// relacionamento com categoria
-	
-	  @ManyToOne
-	  
-	  @JoinColumn(name = "categoriaid", referencedColumnName = "categoriaid")
-	  private Categoria categoria;
-	 
+		@ManyToOne
+		@JoinColumn(name = "categoriaid", referencedColumnName = "categoriaid")
+		private Categoria categoria;
 
 	public Produto() {
 
 	}
-	
-	
 
 	public Produto(Long produtoId, String nome, Double preco, Integer quantidade, String foto, Categoria categoria) {
 		this.produtoId = produtoId;
@@ -52,8 +46,6 @@ public class Produto {
 		this.foto = foto;
 		this.categoria = categoria;
 	}
-
-
 
 	public Long getProdutoId() {
 		return produtoId;
@@ -95,11 +87,12 @@ public class Produto {
 		this.foto = foto;
 	}
 
-	
-	  public Categoria getCategoria() { return categoria; }
-	  
-	  public void setCategoria(Categoria categoria) { this.categoria = categoria; }
-	 
+	public Categoria getCategoria() {
+		return categoria;
+	}
 
-	
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
+
 }
