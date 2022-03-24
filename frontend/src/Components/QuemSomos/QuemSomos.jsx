@@ -10,7 +10,7 @@ export default () => {
         <div class="container conteudo-index conteudo1">
           <div class="col">
             <h1>QUEM SOMOS?</h1>
-            <p class="text-center"> Através do programa Recode Pro 2021, esse projeto foi idealizado e viabilizado pelos seguintes desenvolvedores(as):</p>
+            <p class="text-center"> Através do programa Recode Pro 2021, esse projeto foi idealizado e viabilizado pelos seguintes desenvolvedores(as) Full-stack Jr.:</p>
           </div>
           <div class="row d-lg-flex justify-content-evenly mx-auto justify-content-lg-center membersList">
             <div class="col-6 col-sm-4 col-md-3 col-lg-2">
@@ -43,7 +43,7 @@ export default () => {
             <div class="col-6 col-sm-4 col-md-3 col-lg-2">
               <a href="https://github.com/Lohanedv" target="_blank">
                 <img class="rounded-circle shadow" src="https://avatars.githubusercontent.com/u/88790041" loading="lazy" />
-                <div class="text-center d-xl-flex justify-content-xl-center attrTags"><span class="badge rounded-pill shadow-sm" style={{ background: "rgb(186,76,20)" }}>Marketing</span><span class="badge bg-primary"></span></div>
+                <div class="text-center d-xl-flex justify-content-xl-center attrTags"><span class="badge rounded-pill shadow-sm" style={{ background: "rgb(94 20 186)" }}>Full-Stack</span><span class="badge bg-primary"></span></div>
                 <h5 class="text-center d-flex justify-content-center align-items-center align-content-center">Lohane<br />Dafne</h5>
               </a>
             </div>
