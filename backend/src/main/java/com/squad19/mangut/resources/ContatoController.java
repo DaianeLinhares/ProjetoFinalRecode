@@ -34,7 +34,7 @@ public class ContatoController {
         return contatoId;
     }
 		
-	@PostMapping    
+	@PostMapping("/contatos")
     public Contato create(@RequestBody Contato contato) {
         return service.create(contato);
     }	

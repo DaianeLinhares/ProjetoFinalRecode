@@ -10,7 +10,7 @@ const Formulario = () => {
 
     function enviarDados(event) {
         event.preventDefault()
-        api.post("/contatos/", {
+        api.post("/contatos", {
             nome: nome.current.value,
             email: email.current.value,
             mensagem: mensagem.current.value,
