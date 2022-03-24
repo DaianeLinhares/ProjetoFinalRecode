@@ -46,12 +46,12 @@ const Formulario = () => {
 
                     <div className="input-group flex-nowrap mt-4">
                         <span className="input-group-text" id="addon-wrapping">foto</span>
-                        <input required type="password" className="form-control" ref={foto} placeholder="Endereço" aria-label="Endereço" aria-describedby="addon-wrapping" />
+                        <input required type="text" className="form-control" ref={foto} placeholder="Endereço" aria-label="Endereço" aria-describedby="addon-wrapping" />
                     </div>
 
                     <div className="input-group flex-nowrap mt-4">
                         <span className="input-group-text" id="addon-wrapping">categoria</span>
-                        <input required type="text" className="form-control" ref={categoria} placeholder="Nome" aria-label="Username" aria-describedby="addon-wrapping" />
+                        <input type="text" className="form-control" ref={categoria} placeholder="Nome" aria-label="Username" aria-describedby="addon-wrapping" />
                     </div>                               
 
                     <div className="col s12">

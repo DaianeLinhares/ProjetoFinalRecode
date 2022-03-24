@@ -8,7 +8,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.squad19.mangut.entities.Cliente;
 import com.squad19.mangut.entities.Vendedor;
 import com.squad19.mangut.repositories.VendedorRepository;
 
