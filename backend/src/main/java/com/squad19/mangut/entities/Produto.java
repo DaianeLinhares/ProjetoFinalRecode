@@ -32,22 +32,10 @@ public class Produto {
 	@Column(name = "foto")
 	private String foto;
 
-	// relacionamento com categoria
-		@ManyToOne
-		@JoinColumn(name = "categoriaid", referencedColumnName = "categoriaid")
 		private Categoria categoria;
 
 	public Produto() {
 
-	}
-
-	public Produto(Long produtoId, String nome, Double preco, Integer quantidade, String foto, Categoria categoria) {
-		this.produtoId = produtoId;
-		this.nome = nome;
-		this.preco = preco;
-		this.quantidade = quantidade;
-		this.foto = foto;
-		this.categoria = categoria;
 	}
 
 	public Long getProdutoId() {
@@ -98,23 +86,13 @@ public class Produto {
 		this.categoria = categoria;
 	}
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(categoria, foto, nome, preco, produtoId, quantidade);
+	public Produto(Long produtoId, String nome, Double preco, Integer quantidade, String foto, Categoria categoria) {
+		super();
+		this.produtoId = produtoId;
+		this.nome = nome;
+		this.preco = preco;
+		this.quantidade = quantidade;
+		this.foto = foto;
+		this.categoria = categoria;
 	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Produto other = (Produto) obj;
-		return Objects.equals(categoria, other.categoria) && Objects.equals(foto, other.foto)
-				&& Objects.equals(nome, other.nome) && Objects.equals(preco, other.preco)
-				&& Objects.equals(produtoId, other.produtoId) && Objects.equals(quantidade, other.quantidade);
-	}
-
 }
