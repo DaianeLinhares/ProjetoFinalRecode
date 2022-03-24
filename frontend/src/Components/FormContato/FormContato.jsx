@@ -35,8 +35,9 @@ const Formulario = () => {
                 <label for="exampleFormControlTextarea1" class="form-label">Mensagem</label>
                 <textarea className="form-control" ref={mensagem} id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
+            <br></br>
             <div className="col s12">
-                        <button className="waves-light btn" type="submit">Enviar</button>
+                        <button className="btn btn-sm btn-primary" type="submit">Enviar</button>
                     </div>
         </form>
 

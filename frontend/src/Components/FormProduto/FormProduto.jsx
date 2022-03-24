@@ -59,11 +59,6 @@ const Formulario = () => {
                         <button className="btn btn-sm btn-primary" type="submit">Enviar</button>
                     </div>
                 </form>
-<<<<<<< Updated upstream
-
-
-=======
->>>>>>> Stashed changes
         </>
     );
 }

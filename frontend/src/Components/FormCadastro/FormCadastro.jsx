@@ -62,7 +62,7 @@ const Formulario = () => {
                         <input required type="text" className="form-control" ref={logradouro} placeholder="Nome" aria-label="Username" aria-describedby="addon-wrapping" />
                     </div>
                     <div className="input-group flex-nowrap mt-4">
-                        <span className="input-group-text" id="addon-wrapping">numeroLoogradouro</span>
+                        <span className="input-group-text" id="addon-wrapping">numeroLogradouro</span>
                         <input required type="text" className="form-control" ref={numeroLogradouro} placeholder="Nome" aria-label="Username" aria-describedby="addon-wrapping" />
                     </div>
 
@@ -85,11 +85,11 @@ const Formulario = () => {
                         <span className="input-group-text" id="addon-wrapping">CEP</span>
                         <input required type="text" className="form-control" ref={cep} placeholder="CPF" aria-label="CPF" aria-describedby="addon-wrapping" />
                     </div>
+                    <br></br>
                     <div className="col s12">
-                        <button className="waves-light btn" type="submit">Enviar</button>
+                        <button className="btn btn-sm btn-primary" type="submit">Enviar</button>
                     </div>
                 </form>
-
             </main>
         </>
     );
