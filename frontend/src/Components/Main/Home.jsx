@@ -2,7 +2,7 @@ import React from "react";
 import "../../assets/css/styles.min.css";
 
 import './Home.css';
-import FotoIndigena from '../../assets/img/jungle-g58104a631_1920.jpg';
+import Grafico from '../../assets/img/grafico2.png';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
@@ -24,8 +24,11 @@ export default () => {
               <p> O melhor cuidado, vem de quem cuida da nossa terra.</p>
               <p><b />Abrace essa iniciativa.</p>
           </div>
-          <div class="col-md-6 d-md-flex d-lg-flex align-items-center justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center">
-            <img class="rounded img-fluid shadow" src={FotoIndigena} alt="Indígena" />
+
+          
+          <h3 class="text-center"><br />Estimativa de crescimento da comunidade indígena e </h3> <h3 class="text-center">de usuários dentro da plataforma até 2033.</h3>
+
+          <div class="Grafico"><center><img class="rounded img-fluid" src={Grafico} /></center>
           </div>        
         </div>     
       </main>

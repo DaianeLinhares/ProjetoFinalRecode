@@ -17,7 +17,7 @@ import com.squad19.mangut.entities.Contato;
 import com.squad19.mangut.services.ContatoService;
 
 @RestController
-@RequestMapping("/contatos")
+@RequestMapping(value = "/contatos")
 public class ContatoController {
 
 	@Autowired
@@ -34,7 +34,7 @@ public class ContatoController {
         return contatoId;
     }
 		
-	@PostMapping    
+	@PostMapping("/contatos")
     public Contato create(@RequestBody Contato contato) {
         return service.create(contato);
     }	

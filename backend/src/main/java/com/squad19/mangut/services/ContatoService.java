@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.squad19.mangut.entities.Contato;
-import com.squad19.mangut.entities.Vendedor;
 import com.squad19.mangut.repositories.ContatoRepository;
 
 @Service

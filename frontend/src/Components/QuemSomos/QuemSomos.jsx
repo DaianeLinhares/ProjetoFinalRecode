@@ -10,7 +10,7 @@ export default () => {
         <div class="container conteudo-index conteudo1">
           <div class="col">
             <h1>QUEM SOMOS?</h1>
-            <p> Através do programa Recode Pro 2021, esse projeto foi idealizado e viabilizado pelos seguintes desenvolvedores(as):</p>
+            <p class="text-center"> Através do programa Recode Pro 2021, esse projeto foi idealizado e viabilizado pelos seguintes desenvolvedores(as):</p>
           </div>
           <div class="row d-lg-flex justify-content-evenly mx-auto justify-content-lg-center membersList">
             <div class="col-6 col-sm-4 col-md-3 col-lg-2">

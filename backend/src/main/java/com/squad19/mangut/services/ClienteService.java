@@ -23,12 +23,10 @@ public class ClienteService {
 		return ResponseEntity.ok(repository.findAll());		
 	}
 
-	@Transactional(readOnly = true)
 	public Optional<Cliente> findById(Long id) {
 		return repository.findById(id);
 	}
 
-		
 	public Cliente update(Cliente cliente) {
 		return repository.saveAndFlush(cliente);
 	}	
