@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -27,6 +27,7 @@
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/MangutMap.css">
+    <script src="js/maps.js"></script>
 
 </head>
 
@@ -51,12 +52,9 @@
             <div id="map"></div>
         </div>
     </aside>
-
 </body>
 
 </html>
-
-
 
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
     integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
@@ -64,316 +62,313 @@
 </script>
 
 <script>
-    var debug = false;
+var debug = false;
+var actualPos = [null, null];
+var actualMark;
+var map = L.map('map').setView([-15.1, -54.4], 4);
+var zoom = map.getZoom();
+var coords = [];
+var sellers = [];
+var cards = [];
+var markers = [];
+var distance = [];
 
-    var map = L.map('map').setView([-15.1, -54.4], 4);
-    var actualPos = [null, null];
-    var actualMark;
-    var zoom = map.getZoom();
-    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-        attribution: 'Mapa fornecido por <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> e <a href="https://www.mapbox.com/about/company/">Mapbox</a>',
-        maxZoom: 18,
-        id: 'mapbox/streets-v11',
-        tileSize: 512,
-        zoomOffset: -1,
-        accessToken: 'pk.eyJ1IjoiYnJ5Y2VlZCIsImEiOiJjbDA2NzQ3eWwwd2t3M2tueTgwYTNmeGY1In0.OLc3Hh-QhsLTz7JGd-IY2g'
-    }).addTo(map)
-    //var BING_API = "Aj3HAHdVuBAi97bfuuSx-bEFiM1wov6oDFaWZwAwBxfW1kWTH8-R2Cx1a8XhVf5U";
-    //var bingLayer = L.tileLayer.bing(BING_API).addTo(map)
-
-
-    function updateActualPos(lat, lng) {
-        if (actualPos[0] != lat || actualPos[1] != lng) {
-            actualPos[0] = lat;
-            actualPos[1] = lng;
-            // draw a circle at the actual position
-            if (actualPos[0] == null && actualPos[1] == null) {
-                actualMark = L.circle([actualPos[0], actualPos[1]], {
-                    color: 'red',
-                    fillColor: '#f03',
-                    fillOpacity: 0.2,
-                    radius: 15
-                }).addTo(map);
-            } else {
-                if (actualMark) {
-                    map.removeLayer(actualMark);
-                }
-                actualMark = L.circle([actualPos[0], actualPos[1]], {
-                    color: 'red',
-                    fillColor: '#f03',
-                    fillOpacity: 0.2,
-                    radius: 15
-                }).addTo(map);
-            }
-        }
-    }
-
-    function changeView(lat, lng, zoom=18) {
-        map.setView([lat, lng], zoom);
-    }
-    function insertMarker(lat, lng) {
-        L.marker([lat, lng]).addTo(map);
-    }
-
-    function changeType(type) {
-        map.eachLayer(function (layer) {
-            if (layer.options.type === type) {
-                map.removeLayer(layer);
-            }
-        });
-    }
-
-    // Search address
-    var searchAddr = document.getElementById('searchAddr');
-    var searchInput = document.getElementById('search-input');
-    var searchByGPS = document.getElementById('tryGPS');
-    var searchValue;
-
-    searchAddr.addEventListener('click', function () {
-        searchIntoMap();
-    });
-    searchInput.addEventListener('keyup', function (e) {
-        if (e.keyCode == 13) {
-            searchIntoMap();
-            searchInput.blur();
-        }
-    });
-    searchByGPS.addEventListener('click', function () {
-        getActualGPS();
-    });
-
-    // When a marker is clicked, open a popup with the marker's name
-    function onMapClick(e) {
-        var popup = L.popup()
-            .setLatLng(e.latlng)
-            .setContent("You clicked the map at " + e.latlng.toString())
-            .openOn(map);
-    }
-
-    // Event to handle when a click is made on the map
-    map.on('click', function (e) {
-        var lat = e.latlng.lat;
-        var lng = e.latlng.lng;
-        changeView(lat, lng, zoom);
-        // check if the click happens on a marker
-        if (e.originalEvent.target.tagName == "circle") {
-            var lat = e.originalEvent.target._latlng.lat;
-            var lng = e.originalEvent.target._latlng.lng;
-            changeView(lat, lng, zoom);
-        }
-    });
-
-    var searchInputIsEmpty = true;
-    searchInput.addEventListener('input', function () {
-        searchValue = searchInput.value;
-        if(searchValue.length > 0 && searchInputIsEmpty == true){
-            searchAddr.classList.remove('hide-it');
-            searchByGPS.classList.add('hide-it');
-            searchInputIsEmpty = false;
-        }else{
-            if(searchValue.length == 0){
-                searchAddr.classList.add('hide-it');
-                searchByGPS.classList.remove('hide-it');
-                searchInputIsEmpty = true;
-            }
-        }
-        if(searchValue === "---debug"){
-            if(debug == false){
-                debug = true;
-                var div = document.createElement('div');
-                div.id = "debug";
-                document.body.appendChild(div);
-                searchValue = "";
-                alert("Debug mode enabled");
-            }else{
-                debug = false;
-                document.body.removeChild(document.getElementById('debug'));
-                alert("Debug mode disabled");
-            }
-        }
-    });
-    // when click in closeNearSidemenu, close it
-    var closeNearSidemenu = document.getElementById('closeNearSidemenu');
-    var mappingList = document.getElementById('mappingList');
-    var searchArea = document.getElementById('searchArea');
-    closeNearSidemenu.addEventListener('click', function () {
-        // close the sidemenu
-        mappingList.classList.add("hide-it");
-        searchArea.classList.add("restore-it");
-    });
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Mapa fornecido por <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> e <a href="https://www.mapbox.com/about/company/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'pk.eyJ1IjoiYnJ5Y2VlZCIsImEiOiJjbDA2NzQ3eWwwd2t3M2tueTgwYTNmeGY1In0.OLc3Hh-QhsLTz7JGd-IY2g'
+}).addTo(map)
 
 
-
-
-    function searchIntoMap() {
-        searchValue = searchInput.value;
-        if (searchValue) {
-            var url = 'https://nominatim.openstreetmap.org/search?q=' + searchValue + '&format=json&polygon=1&addressdetails=1';
-            fetch(url)
-                .then(function (response) {
-                    return response.json();
-                })
-                .then(function (data) {
-                    if (data.length > 0) {
-                        var lat = data[0].lat;
-                        var lng = data[0].lon;
-                        zoom = map.getZoom();
-                        // set new value to input
-                        searchInput.value = data[0].osm_type;
-                        switch (data[0].osm_type) {
-                            case 'node':
-                                changeView(lat, lng, 18);
-                                break;
-                            case 'way':
-                                changeView(lat, lng, 16);
-                                break;
-                            case 'relation':
-                                changeView(lat, lng, 13);
-                                break;
-                            default:
-                                alert('[ERROR 404] Não foi possível encontrar o endereço informado.');
-                                break;
-                        }
-                        if (data[0].osm_type == 'node') {
-                            document.title = data[0].address.city + ', ' + data[0].address.state + " " + data[0].address.country_code.toUpperCase() + ' (' + data[0].address.postcode + ')';
-                        } else {
-                            document.title = data[0].address.city + ', ' + data[0].address.state + " " + data[0].address.country_code.toUpperCase();
-                        }
-                        updateActualPos(lat, lng);
-                    }
-                }
-            );
-        }
-    }
-
-
-    // GPS Function
-    function getActualGPS() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(getActualGPS_success, getActualGPS_error, {
-                enableHighAccuracy: false,
-                timeout: 5000,
-                maximumAge: 0
-            });
+// FUNCTIONS //
+function updateActualPos(lat, lng) {
+    if (actualPos[0] != lat || actualPos[1] != lng) {
+        actualPos[0] = lat;
+        actualPos[1] = lng;
+        // draw a circle at the actual position
+        if (actualPos[0] == null && actualPos[1] == null) {
+            actualMark = L.circle([actualPos[0], actualPos[1]], {
+                color: 'red',
+                fillColor: '#f03',
+                fillOpacity: 0.2,
+                radius: 15
+            }).addTo(map);
         } else {
-            alert('Não foi possível obter a localização atual. Por favor, ative o GPS do seu dispositivo e/ou verifique se não há restrições de acesso ao serviço.');
+            if (actualMark) {
+                map.removeLayer(actualMark);
+            }
+            actualMark = L.circle([actualPos[0], actualPos[1]], {
+                color: 'red',
+                fillColor: '#f03',
+                fillOpacity: 0.2,
+                radius: 15
+            }).addTo(map);
         }
     }
-    function getActualGPS_success(position) {
-        var lat = position.coords.latitude;
-        var lng = position.coords.longitude;
-        changeView(lat, lng, zoom);
-        updateActualPos(lat, lng);
+}
+
+function changeView(lat, lng, zoom = 18) {
+    map.setView([lat, lng], zoom);
+}
+function insertMarker(lat, lng) {
+    L.marker([lat, lng]).addTo(map);
+}
+
+function changeType(type) {
+    map.eachLayer(function (layer) {
+        if (layer.options.type === type) {
+            map.removeLayer(layer);
+        }
+    });
+}
+
+// SEARCHING ADDRESS //
+var searchAddr = document.getElementById('searchAddr');
+var searchInput = document.getElementById('search-input');
+var searchByGPS = document.getElementById('tryGPS');
+var searchValue;
+
+searchAddr.addEventListener('click', function () {
+    searchIntoMap();
+});
+searchInput.addEventListener('keyup', function (e) {
+    if (e.keyCode == 13) {
+        searchIntoMap();
+        searchInput.blur();
     }
-    function getActualGPS_error(error) {
+});
+searchByGPS.addEventListener('click', function () {
+    getActualGPS();
+});
+
+// When a marker is clicked, open a popup with the marker's name
+function onMapClick(e) {
+    var popup = L.popup()
+        .setLatLng(e.latlng)
+        .setContent("You clicked the map at " + e.latlng.toString())
+        .openOn(map);
+}
+
+// Event to handle when a click is made on the map
+map.on('click', function (e) {
+    var lat = e.latlng.lat;
+    var lng = e.latlng.lng;
+    changeView(lat, lng, zoom);
+    // check if the click happens on a marker
+    if (e.originalEvent.target.tagName == "circle") {
+        var lat = e.originalEvent.target._latlng.lat;
+        var lng = e.originalEvent.target._latlng.lng;
+        changeView(lat, lng, zoom);
+    }
+});
+
+// INPUT HANDLER //
+var searchInputIsEmpty = true;
+searchInput.addEventListener('input', function () {
+    searchValue = searchInput.value;
+    if (searchValue.length > 0 && searchInputIsEmpty == true) {
+        searchAddr.classList.remove('hide-it');
+        searchByGPS.classList.add('hide-it');
+        searchInputIsEmpty = false;
+    } else {
+        if (searchValue.length == 0) {
+            searchAddr.classList.add('hide-it');
+            searchByGPS.classList.remove('hide-it');
+            searchInputIsEmpty = true;
+        }
+    }
+    if (searchValue === "---debug") {
+        if (debug == false) {
+            debug = true;
+            var div = document.createElement('div');
+            div.id = "debug";
+            document.body.appendChild(div);
+            searchValue = "";
+            alert("Debug mode enabled");
+        } else {
+            debug = false;
+            document.body.removeChild(document.getElementById('debug'));
+            alert("Debug mode disabled");
+        }
+    }
+});
+// when click in closeNearSidemenu, close it
+var closeNearSidemenu = document.getElementById('closeNearSidemenu');
+var mappingList = document.getElementById('mappingList');
+var searchArea = document.getElementById('searchArea');
+closeNearSidemenu.addEventListener('click', function () {
+    // close the sidemenu
+    mappingList.classList.add("hide-it");
+    searchArea.classList.add("restore-it");
+});
+
+// SEARCHING //
+function searchIntoMap() {
+    searchValue = searchInput.value || null;
+    if (searchValue) {
+        var url = 'https://nominatim.openstreetmap.org/search?q=' + searchValue + '&format=json&polygon=1&addressdetails=1';
+        fetch(url)
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                if (data.length > 0) {
+                    var lat = data[0].lat;
+                    var lng = data[0].lon;
+                    zoom = map.getZoom();
+                    // set new value to input
+                    searchInput.value = data[0].osm_type;
+                    switch (data[0].osm_type) {
+                        case 'node':
+                            changeView(lat, lng, 18);
+                            break;
+                        case 'way':
+                            changeView(lat, lng, 16);
+                            break;
+                        case 'relation':
+                            changeView(lat, lng, 13);
+                            break;
+                        default:
+                            alert('[ERROR 404] Não foi possível encontrar o endereço informado.');
+                            break;
+                    }
+                    updateActualPos(lat, lng);
+                    updateResults(lat, lng);
+                }
+            }
+        );
+    }
+}
+
+
+// GPS //
+function getActualGPS() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(getActualGPS_success, getActualGPS_error, {
+            enableHighAccuracy: false,
+            timeout: 5000,
+            maximumAge: 0
+        });
+    } else {
         alert('Não foi possível obter a localização atual. Por favor, ative o GPS do seu dispositivo e/ou verifique se não há restrições de acesso ao serviço.');
     }
-
-    // based on my location in actualPos, create a filter to show only the places near me
-    function getNearPlacesOrder(aLat, aLong, bLat, bLong, rad) {
-        var a = Math.PI * aLat / 180;
-        var b = Math.PI * bLat / 180;
-        var c = Math.PI * aLong / 180;
-        var d = Math.PI * bLong / 180;
-        var dist = Math.acos(Math.sin(a) * Math.sin(b) + Math.cos(a) * Math.cos(b) * Math.cos(c - d)) * 6371;
-        return dist;
+}
+function consoleIt(type = 'log', msg = '', obj = null) {
+    if (debug) {
+        if (obj) {
+            console[type](msg, obj);
+        } else {
+            console[type](msg);
+        }
     }
-</script>
+}
+function getActualGPS_success(position) {
+    var lat = position.coords.latitude;
+    var lng = position.coords.longitude;
+    changeView(lat, lng, zoom);
+    updateActualPos(lat, lng);
+    updateResults(lat, lng);
+}
+function getActualGPS_error(error) {
+    alert('Não foi possível obter a localização atual. Por favor, ative o GPS do seu dispositivo e/ou verifique se não há restrições de acesso ao serviço.');
+}
+function getNearPlacesOrder(aLat, aLong, bLat, bLong, rad) {
+    var a = Math.PI * aLat / 180;
+    var b = Math.PI * bLat / 180;
+    var c = Math.PI * aLong / 180;
+    var d = Math.PI * bLong / 180;
+    var dist = Math.acos(Math.sin(a) * Math.sin(b) + Math.cos(a) * Math.cos(b) * Math.cos(c - d)) * 6371;
+    return dist;
+}
+function updateResults(lat = actualPos[0], lon = actualPos[1]) {
+    cleanCards();
 
-<script>
-    // get the json from the database and register in the array
-    var url = 'http://localhost/maps/coords.php';
-    var coords = [];
-    var sellers = [];
-    var cards = [];
-    var markers = [];
+    let url = 'https://squad19mangut.herokuapp.com/vendedores';
+
     fetch(url)
     .then(function (response) {
         return response.json();
     })
     .then(function (data) {
+        console.warn(data);
         for (var i = 0; i < data.length; i++) {
-            coords.push([data[i].sID, data[i].x, data[i].y]);
-            sellers.push(data[i].sID, data[i].vID);
-            cards.push(data[i].card_desc, data[i].card_phone, data[i].card_whatsapp);
+            var endereco = [];
+            if (data[i].logradouro)       {endereco.push(data[i].logradouro);}
+            if (data[i].numeroLogradouro) {endereco.push(data[i].numeroLogradouro);}
+            if (data[i].bairro)           {endereco.push(data[i].bairro);}
+            if (data[i].cidade)           {endereco.push(data[i].cidade);}
+            if (data[i].estado)           {endereco.push(data[i].estado);}
+            if (data[i].cep)              {endereco.push(data[i].cep);}
+
+            endereco = endereco.join(' ');
+            endereco = endereco.replace(/ /g, '%20');
+            console.warn(endereco);
+            sellers.push([data[i].nome, data[i].telefone, data[i].email, data[i].site, data[i].lat, data[i].long, endereco]);
+
+            let _url = 'https://nominatim.openstreetmap.org/search?q=' + 
+            endereco + 
+            '&format=json&polygon=1&addressdetails=1';
+            fetch(_url)
+            .then(function (response) {
+                console.warn(response);
+                return response.json();
+            })
+            .then(function (data) {
+                
+                try {
+                    console.warn(data[0].lat);
+                    if (data[0].lat != null || data[0].lat != undefined) {
+                        if (data.length > 0) {
+                            for(j = 0; j < sellers.length; j++) {
+                                if (sellers[j][5] == data[0].lat && sellers[j][6] == data[0].lon) {
+                                    var lattd = data[0].lat;
+                                    var lngtd = data[0].lon;
+                                    console.warn(lattd, lngtd);
+                                    var dist = getNearPlacesOrder(lattd, lngtd, actualPos[0], actualPos[1], 0.1);
+                                    coords.push([data[0].lattd, data[0].lngtd]);
+                                    distance.push(dist);
+                                    insertMarker(coords[i][1], coords[i][2]);
+                                    infoCardGen(sellers[i].nome, sellers[i].telefone, sellers[i].email, sellers[i].logradouro, sellers[i].numero, sellers[i].bairro, sellers[i].cidade, sellers[i].estado, sellers[i].cep, distance[i]);
+                                }
+                            }
+                        }
+                    }
+                } catch (e) {}
+            });
         }
         for (var i = 0; i < coords.length; i++) {
-            markers[i] = L.marker([coords[i][1], coords[i][2]], {
-                icon: L.divIcon({
-                    className: 'marker-icon',
-                    html: '<div class="marker-icon-inner"><img src="img/marker.png" alt=""></div>'
-                })
-            }).addTo(map);
-            markers[i].bindPopup('<div class="marker-popup"><div class="marker-popup-inner"><div class="marker-popup-img"><img src="img/marker.png" alt=""></div></div></div>');
-            infoCardGen(sellers[i][0], sellers[i][1], coords[i][0], coords[i][1], cards[i][0], cards[i][1], cards[i][2]);
+            
         }
     });
-    
-    function infoCardGen(sID, vID, x, y, cardDetails = null, cardPhone = null, cardWhatsApp = null) {
-        let base = document.getElementById('mappingList');
-
-        let card = document.createElement('div');
-        card.classList.add('minicard');
-    
-        let cardHeader = document.createElement('div');
-        cardHeader.innerHTML = '<h3><a href="' + sID + '"></a></h3>';
-
-        let cardBody = document.createElement('div');
-        cardBody.classList.add('minicard-body');
-        cardBody.innerHTML = '<p><span>' + cardDetails + '</span></p>' +
-        "<p><i class=\"material-icons-round\"><span>directions_car</span></i><span>" + Math.random() + "</span></p>" +
-        "<p><i class=\"material-icons-round\"><span>phone</span></i><span>" + cardPhone + "</span></p>" +
-        "<p><i class=\"material-icons-round\"><span>location_on</span></i><span>" + x+y + "</span></p>"+
-        "<div class=\"_actions\">" +
-        "<a href=\"" + vID + "\" class=\"btn btn-primary btn-sm\"><i class=\"material-icons-round\">store</i><span>Loja</span></a>" +
-        "<a href=\"https://api.whatsapp.com/send?phone=" + cardPhone + "&message=Olá! Encontrei seu anúncio no Mangut e gostaria de comprar algo com você, poderia me ajudar?\" class=\"btn btn-success btn-sm\"><i class=\"material-icons-round\">phone_iphone</i><span>WhatsApp</span></a>" +
-        "</div>";
-
-
-        card.appendChild(cardHeader);
-        card.appendChild(cardBody);
-        base.appendChild(card);
-
+}
+function cleanCards() {
+    var cards = document.getElementsByClassName('minicard');
+    while (cards.length > 0) {
+        cards[0].parentNode.removeChild(cards[0]);
     }
+}
+function infoCardGen(nome = "-", telefone = "-", email = "-", logradouro = "-", numero = "-", bairro = "-", cidade = "-", estado = "-", cep = "-", distance = "-") {
+    let base = document.getElementById('mappingList');
+    let card = document.createElement('div');
+    card.classList.add('minicard');
+    let cardHeader = document.createElement('div');
+    cardHeader.innerHTML = '<h3><a href="' + nome + '"></a></h3>';
+    let cardBody = document.createElement('div');
+    cardBody.classList.add('minicard-body');
+    cardBody.innerHTML = '<p><span>' + cardDetails + '</span></p>' +
+    "<p><i class=\"material-icons-round\"><span>directions_car</span></i><span>" + distance + " km</span></p>" +
+    "<p><i class=\"material-icons-round\"><span>phone</span></i><span>" + cardPhone + "</span></p>" +
+    "<p><i class=\"material-icons-round\"><span>location_on</span></i><span>" + logradouro + ", nº" + numero + " - " + bairro + ", " + cidade + "/" + estado + " (" + cep + ")</span></p>"+
+    "<div class=\"_actions\">" +
+    "<a href=\"" + telefone + "\" class=\"btn btn-primary btn-sm\"><i class=\"material-icons-round\">store</i><span>Loja</span></a>" +
+    "<a href=\"https://api.whatsapp.com/send?phone=" + telefone + "&message=Olá! Encontrei seu anúncio no Mangut e gostaria de comprar algo com você, poderia me ajudar?\" class=\"btn btn-success btn-sm\"><i class=\"material-icons-round\">phone_iphone</i><span>WhatsApp</span></a>" +
+    "</div>";
+
+    card.appendChild(cardHeader);
+    card.appendChild(cardBody);
+    base.appendChild(card);
+}
 </script>
-
-<div class="minicard">
-                <div class="minicard-header">
-                    <h3>
-                        <a href="#">Vendedor@</a>
-                    </h3>
-                </div>
-                <div class="minicard-body">
-                    <p>
-
-                        <span>A</span>
-                    </p>
-                    <p>
-                        <i class="material-icons-round">
-                            <span class="material-icons-round">
-                                directions_car
-                            </span>
-                        </i>
-                        <span>32km</span>
-                    </p>
-                    <p>
-                        <i class="material-icons-round">phone</i>
-                        <span>4002-8722</span>
-                    </p>
-                    <p>
-                        <i class="material-icons-round">location_on</i>
-                        <span>Rua dos Bobos, Nº0 - Não sei, Aonde/UF</span>
-                    </p>
-                    <div class="_actions">
-                        <a href="#" class="btn btn-primary btn-sm">
-                            <i class="material-icons-round">edit</i>
-                            <span>Loja</span>
-                        </a>
-                        <a href="#" class="btn btn-success btn-sm">
-                            <i class="material-icons-round">phone</i>
-                            <span>WhatsApp</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>

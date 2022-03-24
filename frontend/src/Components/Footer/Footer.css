@@ -1,33 +1,29 @@
-.footer1{
+.footer1 {
     width: 100%;
     height: auto;
     background: #e95e10 linear-gradient(0deg, #FFF 70px, #e95e10 70.01px) !important;
     position: relative;
     bottom: 0px;
-    margin-top: 16px;
+    margin-top: -6px;
     padding-top: 16px;
     padding-bottom: 16px;
     box-shadow: 0 -5px 55px rgba(22,22,22,0.22);
 }
-
-.footer2{
+.footer2 {
     text-shadow: 1px 1px 1px rgba(34,34,34,0.16), 2px 2px 4px var(--km-primary);
     text-align: justify !important;
 }
-
-.footer3{
-    /*background-color: #008000;*/
+.footer3 {
     color: #000
 }
-
-.footer4{
-    margin-bottom: 16px;
+.footer4 {
     height: 88px !important;
-    width: auto !important;
-    z-index: 2;
+    margin: 0 auto;
+    margin-bottom: 16px !important;
+    width: 88px !important;
+    z-index: 2
 }
-
-.footer5{
+.footer5 {
     text-shadow: 1px 1px 1px rgb(255,138,0);
     font-size: 15px;
     position: relative;
@@ -42,10 +38,8 @@
     text-transform: uppercase;
     display: block;
     width: 62px;
- 
 }
-
-.footer6{
+.footer6 {
     height: 32px;
     image-rendering: crisp-edges;
     width: auto;
@@ -54,7 +48,6 @@
     left: 114px;
     filter: brightness(1.1) saturate(1.4);
 }
-
 .footer7 {
     position: relative;
     color: #ffe102;
@@ -65,5 +58,6 @@
 }
 
 .recodeLogo {
-    width:93px;
+    width: 93px;
+    margin: 0 auto;
 }          

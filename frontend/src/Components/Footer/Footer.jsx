@@ -5,8 +5,7 @@ import './Footer.css';
 export default () => {
     return (
         <>
-
-            <footer className="d-flex justify-content-start align-self-baseline align-items-xxl-end footer1" data-aos="slide-up" data-aos-delay="50">
+            <footer className="d-flex justify-content-start align-self-baseline align-items-xxl-end footer1">
                 <div className="container">
                     <div className="row d-lg-flex flex-column justify-content-lg-center">
                         <div className="col-lg-auto text-primary d-xxl-flex justify-content-center align-content-end align-self-center align-items-xxl-end">
