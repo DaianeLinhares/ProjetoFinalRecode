@@ -27,8 +27,6 @@ export default () => {
                                 </p>
                             </div>
                         </div>
-
-
                     </div>
                 </div>
             </main>

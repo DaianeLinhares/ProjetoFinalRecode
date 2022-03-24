@@ -10538,6 +10538,23 @@ p b {
 	color: #333
 }
 
+html {
+    overflow-x: hidden;
+}
+html body {
+    overflow-x: display;
+}
+
+footer {
+    background: #6a12ca linear-gradient(0deg, #FFF 70px, #6a12ca 70.01px) !important;
+    box-shadow: 0 0 12px rgb(0 0 0 / 10%);
+}
+footer em {
+    position: relative;
+    top: -16px;
+    color: white;
+}
+
 @media (max-width: 767px) {
     .website-logo {
         height: 74px;
