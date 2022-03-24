@@ -27,7 +27,7 @@ public class ProdutoService {
 		return repository.findById(id);
 	}
 
-	
+	@Transactional(readOnly = true)
 	public Produto create(Produto produto) {
 		return repository.save(produto);
 	}
