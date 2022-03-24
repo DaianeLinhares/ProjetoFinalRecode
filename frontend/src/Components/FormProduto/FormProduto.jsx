@@ -15,7 +15,7 @@ const Formulario = () => {
 
     function enviarDados(event) {
         event.preventDefault()
-        api.post("/clientes/salvar/", {
+        api.post("/produtos/", {
             nome: nome.current.value,
             telefone: preco.current.value,
             email: quantidade.current.value,
