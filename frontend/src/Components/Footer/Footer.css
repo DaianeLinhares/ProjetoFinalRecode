@@ -1,7 +1,7 @@
 .footer1{
     width: 100%;
     height: auto;
-    background: white;
+    background: #3dd130 linear-gradient(0deg, #FFF 70px, #7030d1 70.01px) !important;
     position: relative;
     bottom: -113px;
     margin-top: 86px;
@@ -33,7 +33,8 @@
     position: relative;
     top: -30px;
     left: 0px;
-    font-family: 'Alatsi';color: rgb(255,225,2) !important;
+    font-family: 'Alatsi';
+    color: #FFE102 !important;
     background: linear-gradient(rgb(112,81,222), rgb(87,64,199));
     z-index: 2;
     padding: 0 8px 2px;
@@ -52,6 +53,15 @@
     top: -106px;
     left: 114px;
     filter: brightness(1.1) saturate(1.4);
+}
+
+.footer7 {
+    position: relative;
+    color: #ffe102;
+    text-transform: uppercase;
+    top: -40px;
+    font-size: 17px;
+    text-shadow: 1px 1px 0px #ea811b;
 }
 
 .recodeLogo {
