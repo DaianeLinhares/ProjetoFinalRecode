@@ -54,14 +54,18 @@ const Formulario = () => {
                         <span className="input-group-text" id="addon-wrapping">categoria</span>
                         <input type="text" className="form-control" ref={categoria} placeholder="Nome" aria-label="Username" aria-describedby="addon-wrapping" />
                     </div>                               
-
+                    <br></br>
                     <div className="col s12">
-                        <button className="waves-light btn" type="submit">Enviar</button>
+                        <button className="btn btn-sm btn-primary" type="submit">Enviar</button>
                     </div>
                 </form>
+<<<<<<< Updated upstream
 
 
+=======
+>>>>>>> Stashed changes
         </>
     );
 }
 export default Formulario;
+
