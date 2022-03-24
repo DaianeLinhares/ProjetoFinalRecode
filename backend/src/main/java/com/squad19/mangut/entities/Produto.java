@@ -2,13 +2,10 @@ package com.squad19.mangut.entities;
 
 import java.util.Objects;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -17,19 +14,10 @@ public class Produto {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "produtoid")
 	private Long produtoId;
-
-	@Column(name = "nome")
 	private String nome;
-
-	@Column(name = "preco")
 	private Double preco;
-
-	@Column(name = "quantidade")
 	private Integer quantidade;
-
-	@Column(name = "foto")
 	private String foto;
 
 		private Categoria categoria;
@@ -86,13 +74,23 @@ public class Produto {
 		this.categoria = categoria;
 	}
 
-	public Produto(Long produtoId, String nome, Double preco, Integer quantidade, String foto, Categoria categoria) {
-		super();
-		this.produtoId = produtoId;
-		this.nome = nome;
-		this.preco = preco;
-		this.quantidade = quantidade;
-		this.foto = foto;
-		this.categoria = categoria;
+	@Override
+	public int hashCode() {
+		return Objects.hash(categoria, foto, nome, preco, produtoId, quantidade);
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Produto other = (Produto) obj;
+		return Objects.equals(categoria, other.categoria) && Objects.equals(foto, other.foto)
+				&& Objects.equals(nome, other.nome) && Objects.equals(preco, other.preco)
+				&& Objects.equals(produtoId, other.produtoId) && Objects.equals(quantidade, other.quantidade);
+	}
+	
 }
