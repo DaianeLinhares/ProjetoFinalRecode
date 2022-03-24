@@ -10559,7 +10559,7 @@ footer em {
 }
 embed {
     width: 100vw;
-    height: calc(100% - 56px);
+    height: calc(100vh - 56px);
 }
 
 @media (max-width: 767px) {
