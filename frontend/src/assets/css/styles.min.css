@@ -10465,20 +10465,21 @@ textarea.form-control-lg {
     box-shadow: 0 0 4px 1px orange;
     border-color: orange;
     transition: .22s ease;
+    top: -2px;
 }
 .sidemenu .nav-item.text-end button:active{
     filter: saturate(2);
     z-index: 2;
-    box-shadow: inset 0 -1px 4px 1px rgba(0,0,0,.3) !important;
-    border-color: #ffea87;
-    top: 2px;
+    box-shadow: inset 0 2px 4px 1px rgba(0,0,0,.3) !important;
+    border-color: #fa8728;
+    top: 0;
     transition: .1s ease-out;
-    background-color: green;
-    color: #ffea87;
+    background-color: #5AF500;
+    color: #fa8728;
     text-shadow: none;
 }
 .sidemenu .nav-item.text-end button:active:not(:last-of-type) {
-    box-shadow: inset 0 -1px 4px 1px rgba(0,0,0,.3), inset -1px 0 0 #ffea87 !important;
+    box-shadow: inset 0 -1px 4px 1px rgba(0,0,0,.3), inset -1px 0 0 #fa8728 !important;
 }
 .sidemenu .nav-item.text-end button:focus {
     box-shadow: none;
@@ -10495,9 +10496,11 @@ textarea.form-control-lg {
     width: 100vw !important;
     padding: 8px;
 }
+
 .main .container {
     background: white;
     box-shadow: 0 0 12px rgb(0 0 0 / 10%);
+    padding-bottom: 48px;
 }
 .main-menu .container-fluid {
     padding: 0;

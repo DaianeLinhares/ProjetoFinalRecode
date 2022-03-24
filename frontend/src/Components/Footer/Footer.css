@@ -1,11 +1,11 @@
 .footer1{
     width: 100%;
     height: auto;
-    background: #3dd130 linear-gradient(0deg, #FFF 70px, #7030d1 70.01px) !important;
+    background: #e95e10 linear-gradient(0deg, #FFF 70px, #e95e10 70.01px) !important;
     position: relative;
-    bottom: -113px;
-    margin-top: 86px;
-    padding-top: 26px;
+    bottom: 0px;
+    margin-top: 16px;
+    padding-top: 16px;
     padding-bottom: 16px;
     box-shadow: 0 -5px 55px rgba(22,22,22,0.22);
 }
