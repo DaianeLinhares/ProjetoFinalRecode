@@ -39,6 +39,7 @@ const Formulario = () => {
                         <span className="input-group-text" id="addon-wrapping">Preco</span>
                         <input required type="text" className="form-control" ref={preco} placeholder="Nome" aria-label="Username" aria-describedby="addon-wrapping" />
                     </div>
+                    
                     <div className="input-group flex-nowrap mt-4">
                         <span className="input-group-text" id="addon-wrapping">quantidade</span>
                         <input required type="text" className="form-control" ref={quantidade} placeholder="Nome" aria-label="Username" aria-describedby="addon-wrapping" />
@@ -59,7 +60,7 @@ const Formulario = () => {
                     </div>
                 </form>
 
-            
+
         </>
     );
 }
