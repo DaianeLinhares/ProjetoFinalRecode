@@ -27,7 +27,7 @@ const Formulario = () => {
 
     return (
         <>
-            <main className="vh-100 ">
+            
                 <form className="col-8 container" onSubmit={enviarDados}>
                     <h1 className="display-3 mt-4">Cadastrar Produtos</h1>
                     <div className="input-group flex-nowrap mt-4">
@@ -59,7 +59,7 @@ const Formulario = () => {
                     </div>
                 </form>
 
-            </main>
+            
         </>
     );
 }
