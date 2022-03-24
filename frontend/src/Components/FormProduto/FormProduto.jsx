@@ -17,10 +17,10 @@ const Formulario = () => {
         event.preventDefault()
         api.post("/produtos/", {
             nome: nome.current.value,
-            telefone: preco.current.value,
-            email: quantidade.current.value,
-            senha: foto.current.value,
-            logradouro: categoria.current.value
+            preco: preco.current.value,
+            quantidade: quantidade.current.value,
+            foto: foto.current.value,
+            categoria: categoria.current.value
             
         }).then((res) => console.log(res.data)).catch((err) => console.log(err))
     }
