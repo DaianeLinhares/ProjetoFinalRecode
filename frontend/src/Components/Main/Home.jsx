@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "../../assets/css/styles.min.css";
 
 import './Home.css';
@@ -25,7 +24,8 @@ export default () => {
               <p> O melhor cuidado, vem de quem cuida da nossa terra.</p>
               <p><b />Abrace essa iniciativa.</p>
           </div>
-          <div class="col-md-6 d-md-flex d-lg-flex align-items-center justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center"><img class="rounded img-fluid shadow" src={FotoIndigena} />
+          <div class="col-md-6 d-md-flex d-lg-flex align-items-center justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center">
+            <img class="rounded img-fluid shadow" src={FotoIndigena} alt="Indígena" />
           </div>        
         </div>     
       </main>

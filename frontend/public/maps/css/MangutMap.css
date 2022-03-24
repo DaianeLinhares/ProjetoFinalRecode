@@ -1,0 +1,272 @@
+/*---------------------------------------------------------+
+|             Mangut Style Map for Leaflet.js              |
++----------------------------------------------------------+
+|                                                          |
+|  Author:   Wellington do Nascimento - GitHub: @Bryceed   |
+|  Date:     2022-03-21                                    |
+|  Version:  1.1.16                                        |
+|                                                          |
+|  Requires: Leaflet.js, Leaflet.css                       |
+|  License:  GNU AGLPv3                                    |
+|                                                          |
++---------------------------------------------------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+aside {
+    display: grid;
+    display: -ms-grid;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    grid-template-columns: 240px auto;
+    -ms-grid-columns: 240px auto;
+    max-height: 100vh
+}
+
+
+#map {
+    height: 100vh;
+}
+#map.restore-it {
+    transition: .3s ease-out;
+    width: 100vw !important
+}
+#mappingList.hide-it {
+    transition: .4s ease-out;
+    transition-delay: .3s;
+    left: -240px;
+}
+#mappingList, .searchArea {
+	display: flex;
+	flex-direction: column;
+    flex-wrap: nowrap;
+	position: relative
+}
+#mappingList {
+	font-family: Arial;
+	background: #dfdfdf;
+	background-image: linear-gradient(90deg, #efeeee1f, #0d0d0d17);
+	box-shadow: 2px 0 4px -2px #585858;
+	z-index: 450;
+	height:	100vh;
+	overflow: auto
+}
+.searchArea {
+	position: relative;
+	display: flex;
+}
+
+.searchArea #search {
+	position: absolute;
+	right: 8px;
+	top: 10px;
+	z-index: 404;
+	border: 2px solid rgba(0,0,0,0.2);
+	background-clip: padding-box;
+	padding: 1px;
+	border-radius: 4px;
+	height: 35px;
+	font-size: 0;
+	display: flex;
+	margin-left: 1px;
+}
+.searchArea #search input:not(:focus):placeholder-shown {
+	opacity: .6;
+	background: rgba(236, 236, 236, .66);
+	text-shadow: -1px 1px 1px #fff
+}
+.searchArea #search input:hover:not(:focus) {
+	opacity: 1;
+}
+.searchArea #search input {
+	height: 29px !important;
+	border: none;
+	border-right: 1px solid #B8B6B3;
+	border-radius: 3px 0 0 3px;
+	max-width: 70ch;
+	font-size: 15px !important;
+	padding: 0 8px;
+	margin: 0;
+	position: relative;
+	left: -1px;
+	margin-left: 1px;
+}
+.searchArea #search button:hover {
+	background-color: #F4F4F4;
+}
+.searchArea #search input:focus {
+	outline: none
+}
+.searchArea #search button {
+	height: 29px;
+	border: none;
+	border: 1px solid transparent !important;
+	max-width: 70ch;
+	font-weight: 600;
+	background: white;
+	padding: 0 7px 0 5px;
+	outline: none
+	
+}
+
+.searchArea #search button#searchAddr {
+	position: relative;
+	top: 0px;
+	width: 50px !important;
+	padding: 2px 14px;
+	background: #28A745;
+	border-radius: 0 2px 2px 0 !important;
+}
+.searchArea #search button#searchAddr span {
+	position: relative;
+	left: -9px;
+	zoom: 1.25;
+	color: white;
+}
+.searchArea #search button#tryGPS {
+	position: absolute;
+	top: 1px;
+	right: 1px;
+	box-shadow: none;
+	border: none;
+	height: 29px !important;
+	border-radius: 0 2px 2px 0 !important;
+	padding: 1px 14px 0
+}
+.searchArea #search button#tryGPS span {
+	position: relative;
+	left: -9px;
+	zoom: 1.29;
+	color: #000;
+}
+.searchArea .material-icons-round {
+	font-size: 18px
+}
+
+#searchArea.restore-it {
+	transition: .3s ease-out;
+	width: 100vw !important;
+	left: -240px !important
+}
+
+#searchArea.hide-it {
+	transition: .4s ease-out;
+	transition-delay: .3s;
+	left: -240px;
+}
+
+#mappingList h2 {
+	padding: 12px 12px 6px;
+	font-weight: bolder;
+	letter-spacing: -1px;
+	font-size: 2.1rem;
+}
+#mappingList .toclose {
+	position: absolute !important;
+	right: 13px;
+	top:12px;
+	box-shadow: 0 0 0 0px transparent;
+	border-radius: 4px;
+	padding: 1px;
+}
+#mappingList .toclose .btn {
+	padding: 8px 10px 2px;
+	background: transparent;
+	border: transparent;
+	color: rgba(86, 86, 86, .29);
+	transition: .3s ease-in-out;
+}
+#mappingList .toclose:hover {
+	box-shadow: 0 0 0 2px rgba(86,86,86,.65);
+	transition-duration: .2s;
+}
+#mappingList .toclose:hover .btn {
+	background: linear-gradient(#b24444, #960606);
+	color: white;
+	transition-duration: .2s;
+}
+#mappingList .toclose:active {
+	box-shadow: 0 0 0 2px rgba(86,86,86,.65);
+	transition-duration: .2s;
+}
+#mappingList .toclose:active .btn {
+	background: linear-gradient(#b24444, #960606);
+	color: white;
+	transition-duration: .2s;
+}
+#mappingList .minicard {
+	background: white;
+	margin: 6px 12px;
+	border: 1px solid rgba(0,0,0,.2);
+	border-radius: 6px;
+	font-size: .8rem;
+	box-shadow: 0 0px 0px 2px #565656a3;
+}
+#mappingList .minicard h3 {
+	background: linear-gradient(rgba(255,255,255,.2), rgba(0,0,0,.1));
+	background-color: #3b3b3b;
+	border-radius: 6px 6px 0 0;
+	padding: 5px 8px;
+	border-bottom: 2px solid #CCCCCC;
+	font-size: 1.2rem;
+	font-weight: bold;
+	text-shadow: -1px 1px #0000004f;
+}
+#mappingList .minicard h3 a {
+	text-decoration: none;
+	color: white;
+}
+#mappingList .minicard p:first-of-type{
+	padding: 4px 4px 12px;
+} 
+#mappingList .minicard p {
+	margin: 5px 12px;
+	vertical-align: middle;
+	display: flex;
+	font-size: 14px
+	
+}
+#mappingList .minicard p i {
+	color: #333;
+	margin-right: 5px;
+	position: relative;
+	top: -2px
+		
+}
+#mappingList ._actions {
+	display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+	margin-bottom: 10px
+}
+#mappingList ._actions .btn {
+	display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    align-content: center;
+	font-weight: bold;
+	zoom: .85;
+	padding: 5px 12px;
+}
+#mappingList ._actions .btn i {
+	margin-right: 10px
+}
+
+/* Dynamic controller*/
+.hide-it {
+	display: none;
+}
+
+/*Leaflet override*/
+.leaflet-control-zoom-in {
+	margin: 1px;
+	margin-bottom: 0;
+}
+.leaflet-control-zoom-out {
+	margin: 1px;
+}

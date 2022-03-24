@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Helmet from "react-helmet";
 
 import Header from '../../Components/Header/Header'
 import Navbar from '../../Components/Navbar/Main/Main'
 import Footer from '../../Components/Footer/Footer'
+import Map from '../../Components/Map/Map';
 
 import "./Proximidade.css";
 
@@ -12,21 +14,14 @@ export default () => {
         <>
             <Header></Header>
             <Navbar page="Vendedores"></Navbar>
-            <div className="container">
-                <div className="row">
-                    <div className="col-12">
-                        <h1 className="text-center">Proximidade</h1>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-12">
-                        <p className="text-center">
-                            O Recode 2020 está próximo!
-                        </p>
-                    </div>
-                </div>
-            </div>
+            <embed src="/maps/openmaps.html"></embed>
             <Footer></Footer>
+            <Helmet>
+                <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+                    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+                    crossorigin="">
+                </script>
+            </Helmet>
         </>
     )
 }
