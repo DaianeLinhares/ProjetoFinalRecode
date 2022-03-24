@@ -5,7 +5,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 const Formulario = () => {
 
     const nome = useRef()
-    const telefone = useRef()
     const email = useRef()
     const mensagem = useRef()
 
@@ -13,7 +12,6 @@ const Formulario = () => {
         event.preventDefault()
         api.post("/contatos/", {
             nome: nome.current.value,
-            telefone: telefone.current.value,
             email: email.current.value,
             mensagem: mensagem.current.value,
         }).then((res) => console.log(res.data)).catch((err) => console.log(err))
@@ -29,11 +27,6 @@ const Formulario = () => {
                 <label for="exampleFormControlInput1" class="form-label">Nome</label>
                 <input type="text" className="form-control" ref={nome} id="exampleFormControlInput1" placeholder="Nome Completo" />
             </div>
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Telefone</label>
-                <input type="text" className="form-control" ref={telefone} id="exampleFormControlInput1" placeholder="(21) 99777-8888" />
-            </div>
-            
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Email</label>
                 <input type="email" className="form-control" ref={email} id="exampleFormControlInput1" placeholder="nome@exemplo.com" />
