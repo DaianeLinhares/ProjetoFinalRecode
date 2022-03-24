@@ -34,7 +34,7 @@ public class CestaController {
 		return cestaId;
 	}
 
-	@PostMapping
+	@PostMapping("/cesta")
 	public Cesta create(@RequestBody Cesta cesta) {
 		return service.create(cesta);
 	}

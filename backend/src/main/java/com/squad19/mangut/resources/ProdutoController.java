@@ -34,7 +34,7 @@ public class ProdutoController {
 		return produtoId;
 	}
 
-	@PostMapping
+	@PostMapping("/produtos")
 	public Produto create(@RequestBody Produto produto) {
 		return service.create(produto);
 	}
@@ -48,5 +48,4 @@ public class ProdutoController {
 	public void delete(@PathVariable Long id) {
 		service.delete(id);
 	}
-
 }

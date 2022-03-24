@@ -34,7 +34,7 @@ public class CategoriaController {
 		return categoriaId;
 	}
 
-	@PostMapping
+	@PostMapping("/categorias")
 	public Categoria create(@RequestBody Categoria categoria) {
 		return service.create(categoria);
 	}
