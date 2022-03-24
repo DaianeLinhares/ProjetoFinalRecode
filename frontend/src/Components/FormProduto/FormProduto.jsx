@@ -10,7 +10,6 @@ const Formulario = () => {
     const preco = useRef()
     const quantidade = useRef()
     const foto = useRef()
-    const categoria = useRef()
    
 
     function enviarDados(event) {
@@ -20,7 +19,6 @@ const Formulario = () => {
             preco: preco.current.value,
             quantidade: quantidade.current.value,
             foto: foto.current.value,
-            categoria: categoria.current.value
             
         }).then((res) => console.log(res.data)).catch((err) => console.log(err))
     }
@@ -49,11 +47,7 @@ const Formulario = () => {
                         <span className="input-group-text" id="addon-wrapping">foto</span>
                         <input required type="text" className="form-control" ref={foto} placeholder="Endereço" aria-label="Endereço" aria-describedby="addon-wrapping" />
                     </div>
-
-                    <div className="input-group flex-nowrap mt-4">
-                        <span className="input-group-text" id="addon-wrapping">categoria</span>
-                        <input type="text" className="form-control" ref={categoria} placeholder="Nome" aria-label="Username" aria-describedby="addon-wrapping" />
-                    </div>                               
+                             
                     <br></br>
                     <div className="col s12">
                         <button className="btn btn-sm btn-primary" type="submit">Enviar</button>
