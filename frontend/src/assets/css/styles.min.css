@@ -10557,6 +10557,10 @@ footer em {
     top: -16px;
     color: white;
 }
+embed {
+    width: 100vw;
+    height: calc(100% - 56px);
+}
 
 @media (max-width: 767px) {
     .website-logo {
