@@ -30,22 +30,22 @@ const Formulario = () => {
                     <h1 className="display-3 mt-4">Cadastrar Produtos</h1>
                     <div className="input-group flex-nowrap mt-4">
                         <span className="input-group-text" id="addon-wrapping">Nome</span>
-                        <input required type="text" className="form-control" ref={nome} placeholder="Nome" aria-label="Username" aria-describedby="addon-wrapping" />
+                        <input required type="text" className="form-control" ref={nome} placeholder="Nome" aria-label="Nome" aria-describedby="addon-wrapping" />
                     </div>
 
                     <div className="input-group flex-nowrap mt-4">
                         <span className="input-group-text" id="addon-wrapping">Preco</span>
-                        <input required type="text" className="form-control" ref={preco} placeholder="Nome" aria-label="Username" aria-describedby="addon-wrapping" />
+                        <input required type="text" className="form-control" ref={preco} placeholder="Preço" aria-label="Preço" aria-describedby="addon-wrapping" />
                     </div>
                     
                     <div className="input-group flex-nowrap mt-4">
-                        <span className="input-group-text" id="addon-wrapping">quantidade</span>
-                        <input required type="text" className="form-control" ref={quantidade} placeholder="Nome" aria-label="Username" aria-describedby="addon-wrapping" />
+                        <span className="input-group-text" id="addon-wrapping">Quantidade</span>
+                        <input required type="text" className="form-control" ref={quantidade} placeholder="Quantidade" aria-label="Username" aria-describedby="addon-wrapping" />
                     </div>
 
                     <div className="input-group flex-nowrap mt-4">
                         <span className="input-group-text" id="addon-wrapping">foto</span>
-                        <input required type="text" className="form-control" ref={foto} placeholder="Endereço" aria-label="Endereço" aria-describedby="addon-wrapping" />
+                        <input required type="text" className="form-control" ref={foto} placeholder="URL da foto" aria-label="url da foto" aria-describedby="addon-wrapping" />
                     </div>
                              
                     <br></br>

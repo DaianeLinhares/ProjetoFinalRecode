@@ -40,30 +40,30 @@ const Formulario = () => {
                     <h1 className="display-3 mt-4">Cadastrar Cliente</h1>
                     <div className="input-group flex-nowrap mt-4">
                         <span className="input-group-text" id="addon-wrapping">Nome</span>
-                        <input required type="text" className="form-control" ref={nome} placeholder="Nome" aria-label="Username" aria-describedby="addon-wrapping" />
+                        <input required type="text" className="form-control" ref={nome} placeholder="Nome" aria-label="Nome" aria-describedby="addon-wrapping" />
                     </div>
 
                     <div className="input-group flex-nowrap mt-4">
                         <span className="input-group-text" id="addon-wrapping">Telefone</span>
-                        <input required type="text" className="form-control" ref={telefone} placeholder="Nome" aria-label="Username" aria-describedby="addon-wrapping" />
+                        <input required type="text" className="form-control" ref={telefone} placeholder="Telefone" aria-label="Telefone" aria-describedby="addon-wrapping" />
                     </div>
                     <div className="input-group flex-nowrap mt-4">
                         <span className="input-group-text" id="addon-wrapping">email</span>
-                        <input required type="text" className="form-control" ref={email} placeholder="Nome" aria-label="Username" aria-describedby="addon-wrapping" />
+                        <input required type="text" className="form-control" ref={email} placeholder="E-mail" aria-label="Email" aria-describedby="addon-wrapping" />
                     </div>
 
                     <div className="input-group flex-nowrap mt-4">
                         <span className="input-group-text" id="addon-wrapping">Senha</span>
-                        <input required type="password" className="form-control" ref={senha} placeholder="Endereço" aria-label="Endereço" aria-describedby="addon-wrapping" />
+                        <input required type="password" className="form-control" ref={senha} placeholder="Senha" aria-label="Senha" aria-describedby="addon-wrapping" />
                     </div>
 
                     <div className="input-group flex-nowrap mt-4">
                         <span className="input-group-text" id="addon-wrapping">Logradouro</span>
-                        <input required type="text" className="form-control" ref={logradouro} placeholder="Nome" aria-label="Username" aria-describedby="addon-wrapping" />
+                        <input required type="text" className="form-control" ref={logradouro} placeholder="Logradouro" aria-label="Username" aria-describedby="addon-wrapping" />
                     </div>
                     <div className="input-group flex-nowrap mt-4">
-                        <span className="input-group-text" id="addon-wrapping">numeroLogradouro</span>
-                        <input required type="text" className="form-control" ref={numeroLogradouro} placeholder="Numero" aria-label="Username" aria-describedby="addon-wrapping" />
+                        <span className="input-group-text" id="addon-wrapping">Numero</span>
+                        <input required type="text" className="form-control" ref={numeroLogradouro} placeholder="Numero" aria-label="Numero" aria-describedby="addon-wrapping" />
                     </div>
 
                     <div className="input-group flex-nowrap mt-4">
@@ -73,17 +73,17 @@ const Formulario = () => {
 
                     <div className="input-group flex-nowrap mt-4">
                         <span className="input-group-text" id="addon-wrapping">cidade</span>
-                        <input required type="text" className="form-control" ref={cidade} placeholder="Email" aria-label="Email" aria-describedby="addon-wrapping" />
+                        <input required type="text" className="form-control" ref={cidade} placeholder="Cidade" aria-label="Cidade" aria-describedby="addon-wrapping" />
                     </div>
 
                     <div className="input-group flex-nowrap mt-4">
                         <span className="input-group-text" id="addon-wrapping">Estado</span>
-                        <input required type="text" className="form-control" ref={estado} placeholder="Nome" aria-label="Username" aria-describedby="addon-wrapping" />
+                        <input required type="text" className="form-control" ref={estado} placeholder="Estado" aria-label="Estado" aria-describedby="addon-wrapping" />
                     </div>
 
                     <div className="input-group flex-nowrap mt-4">
                         <span className="input-group-text" id="addon-wrapping">CEP</span>
-                        <input required type="text" className="form-control" ref={cep} placeholder="CPF" aria-label="CPF" aria-describedby="addon-wrapping" />
+                        <input required type="text" className="form-control" ref={cep} placeholder="Cep" aria-label="Cep" aria-describedby="addon-wrapping" />
                     </div>
                     <br></br>
                     <div className="col s12">
