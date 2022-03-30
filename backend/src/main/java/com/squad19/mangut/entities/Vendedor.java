@@ -34,8 +34,6 @@ public class Vendedor {
 		
 	}
 	
-	
-	
 	public Vendedor(Long id, String nome, String telefone, String email, String senha, String logradouro,
 			String numeroLogradouro, String bairro, String cidade, String estado, String cep) {
 		
