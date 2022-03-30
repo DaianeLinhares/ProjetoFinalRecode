@@ -2,7 +2,9 @@
 Projeto-solução de site voltado ao tema Indígena, buscando meios de usar a tecnologia como vetor de transformação do **Eu**, do **Nós**, e do **Todos Nós**, ao tentarmos solucionar um problema/dificuldade de um grupo específico da sociedade.
 
 Para contato, pesquisa e acompanhamento do nosso projeto, visite o nosso [Discord](https://discord.gg/vVc6yyAvB5)
-<br><br>
+<br>
+##Link da aplicação: https://squad19mangut.netlify.app/
+<br>
 
 ## Objetivo
 Nosso objetivo é de conseguirmos impactar, positivamente, a vida dos povos originários, ao oferecermos uma ferramenta que vise na equidade e liberdade financeira dessa parcela da população brasileira.
