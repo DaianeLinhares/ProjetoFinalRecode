@@ -3,8 +3,7 @@ Projeto-solução de site voltado ao tema Indígena, buscando meios de usar a te
 
 Para contato, pesquisa e acompanhamento do nosso projeto, visite o nosso [Discord](https://discord.gg/vVc6yyAvB5)
 <br>
-##Link da aplicação: https://squad19mangut.netlify.app/
-<br>
+### Link da aplicação: https://squad19mangut.netlify.app/
 
 ## Objetivo
 Nosso objetivo é de conseguirmos impactar, positivamente, a vida dos povos originários, ao oferecermos uma ferramenta que vise na equidade e liberdade financeira dessa parcela da população brasileira.
