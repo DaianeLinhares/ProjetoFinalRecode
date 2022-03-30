@@ -1,5 +1,5 @@
 import axios from "axios";
 const api = axios.create({
-  baseURL:  "https://squad19mangut.herokuapp.com" 
+  baseURL:  "https://squad19.herokuapp.com" 
 });
 export default api;
