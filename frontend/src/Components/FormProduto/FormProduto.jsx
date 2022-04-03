@@ -14,7 +14,7 @@ const Formulario = () => {
 
     function enviarDados(event) {
         event.preventDefault()
-        api.post("/produto", {
+        api.put("/produtos", {
             foto: foto.value,
             nome: nome.value,
             preco: preco.value,
@@ -22,6 +22,8 @@ const Formulario = () => {
             
             
         }).then((res) => console.log(res.data)).catch((err) => console.log(err))
+        window.alert("Produto cadastrado!")
+    window.location.reload();
     }
 
     return (

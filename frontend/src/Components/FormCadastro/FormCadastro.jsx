@@ -31,6 +31,8 @@ const Formulario = () => {
             estado: estado.current.value,
             cep: cep.current.value,
         }).then((res) => console.log(res.data)).catch((err) => console.log(err))
+        window.alert("Cadastro realiazado com sucesso!")
+    window.location.reload();
     }
 
     return (
@@ -48,7 +50,7 @@ const Formulario = () => {
                         <input required type="text" className="form-control" ref={telefone} placeholder="Telefone" aria-label="Telefone" aria-describedby="addon-wrapping" />
                     </div>
                     <div className="input-group flex-nowrap mt-4">
-                        <span className="input-group-text" id="addon-wrapping">email</span>
+                        <span className="input-group-text" id="addon-wrapping">Email</span>
                         <input required type="text" className="form-control" ref={email} placeholder="E-mail" aria-label="Email" aria-describedby="addon-wrapping" />
                     </div>
 

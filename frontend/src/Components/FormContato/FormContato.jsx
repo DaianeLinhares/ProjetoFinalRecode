@@ -10,11 +10,13 @@ const Formulario = () => {
 
     function enviarDados(event) {
         event.preventDefault()
-        api.post("/contatos", {
+        api.put("/contatos", {
             nome: nome.current.value,
             email: email.current.value,
             mensagem: mensagem.current.value,
         }).then((res) => console.log(res.data)).catch((err) => console.log(err))
+        window.alert("Obrigado(a) pelo contato!")
+    window.location.reload();
     }
 
   return (
