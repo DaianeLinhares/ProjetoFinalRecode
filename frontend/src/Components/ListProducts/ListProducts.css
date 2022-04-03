@@ -1,0 +1,7 @@
+.listaProduto{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 50px;
+    row-gap: 60px;
+}

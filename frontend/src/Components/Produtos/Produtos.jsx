@@ -12,7 +12,6 @@ export default () => {
                 <div class="container conteudo-index conteudo1">
                     <div class="col">
                         <h1 class="text-center">Lista de Produtos</h1>
-                        <p class="text-center"> Através do programa Recode Pro 2021, esse projeto foi idealizado e viabilizado pelos seguintes desenvolvedores(as):</p>
                         <div class="container row ">
                             <ListProdutos></ListProdutos>
                         </div>
