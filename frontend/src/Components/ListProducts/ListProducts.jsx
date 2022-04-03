@@ -1,14 +1,11 @@
-import { React, useEffect, useRef, useState } from 'react';
+import { React, useEffect, useState } from 'react';
+// eslint-disable-next-line no-unused-vars
 import { Link } from 'react-router-dom';
 
 import api from '../../services/api';
 import './ListProducts.css';
 
 const List = () => {
-    const nome = useRef()
-    const preco = useRef()
-    const quantidade = useRef()
-    const foto = useRef()
 
     // create a loop to get all the products
     const [products, setProducts] = useState([]);
@@ -21,7 +18,7 @@ const List = () => {
     return (
         <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mt-3">
             <div class="d-flex justify-content-center" style={{position: "relative"}}>
-                // start the loop
+              
                 {products.map(product => (
                     <div class="card" style={{width: "18rem"}}>
                         <img src={product.foto} class="card-img-top" alt="..." />
@@ -32,7 +29,7 @@ const List = () => {
                         </div>
                     </div>
                 ))}
-                // end the loop
+              
             </div>
         </div>
     );

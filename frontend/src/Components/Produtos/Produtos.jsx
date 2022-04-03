@@ -1,12 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "../../assets/css/styles.min.css";
 import Form from "../../Components/FormProduto/FormProduto";
 import ListProdutos from "../ListProducts/ListProducts";
 
 import './Produtos.css';
-import FotoProdutos from '../../assets/img/jungle-g58104a631_1920.jpg';
-import ListProducts from "../ListProducts/ListProducts";
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
     return (

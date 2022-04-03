@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react/jsx-no-comment-textnodes */
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
@@ -38,7 +40,9 @@ export default () => {
                     </div>
                 </div>
                 <div className="form-group">
+                  
                     <input type="submit" value="Enviar" className="btn btn-sm btn-primary rounded-0 text-uppercase" />
+            
                     <a className="btn btn-sm btn-primary rounded-0 text-uppercase">
                         <i className="fas fa-fast-backward"></i> Voltar para lista
                     </a>

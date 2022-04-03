@@ -5,20 +5,21 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 const Formulario = () => {
-
+    const foto = useRef()
     const nome = useRef()
     const preco = useRef()
     const quantidade = useRef()
-    const foto = useRef()
+    
    
 
     function enviarDados(event) {
         event.preventDefault()
-        api.post("/produtos/", {
-            nome: nome.current.value,
-            preco: preco.current.value,
-            quantidade: quantidade.current.value,
-            foto: foto.current.value,
+        api.post("/produto", {
+            foto: foto.value,
+            nome: nome.value,
+            preco: preco.value,
+            quantidade: quantidade.value,
+            
             
         }).then((res) => console.log(res.data)).catch((err) => console.log(err))
     }
@@ -40,7 +41,7 @@ const Formulario = () => {
                     
                     <div className="input-group flex-nowrap mt-4">
                         <span className="input-group-text" id="addon-wrapping">Quantidade</span>
-                        <input required type="text" className="form-control" ref={quantidade} placeholder="Quantidade" aria-label="Username" aria-describedby="addon-wrapping" />
+                        <input required type="string" className="form-control" ref={quantidade} placeholder="Quantidade" aria-label="Username" aria-describedby="addon-wrapping" />
                     </div>
 
                     <div className="input-group flex-nowrap mt-4">
@@ -50,7 +51,7 @@ const Formulario = () => {
                              
                     <br></br>
                     <div className="col s12">
-                        <button className="btn btn-sm btn-primary" type="submit">Enviar</button>
+                    <button className="btn btn-sm btn-primary" type="submit">Enviar</button>
                     </div>
                 </form>
         </>

@@ -5,6 +5,7 @@ import NavLink from '../NavHandler/NavHandler';
 import './Main.css';
 import MangutName from '../../../assets/img/Mangut-name.svg';
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default props => {
     // props: page = string
     // if page is equal to the name of the link, then the link value inside NavLink is true
