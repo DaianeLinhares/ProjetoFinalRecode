@@ -31,6 +31,8 @@ const Formulario = () => {
             estado: estado.current.value,
             cep: cep.current.value,
         }).then((res) => console.log(res.data)).catch((err) => console.log(err))
+        window.alert("Cadastro realiazado com sucesso!")
+    window.location.reload();
     }
 
     return (

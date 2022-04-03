@@ -14,16 +14,15 @@ const Formulario = () => {
 
     function enviarDados(event) {
         event.preventDefault()
-        api.put("/produtos", {
-            foto: foto.value,
-            nome: nome.value,
-            preco: preco.value,
-            quantidade: quantidade.value,
-            
+        api.post("/produtos", {
+            foto: foto.current.value,
+            nome: nome.current.value,
+            preco: preco.current.value,
+            quantidade: quantidade.current.value,
             
         }).then((res) => console.log(res.data)).catch((err) => console.log(err))
-        window.alert("Produto cadastrado!")
-    window.location.reload();
+        window.alert("Produto Cadastrado!")
+        window.location.reload();
     }
 
     return (
