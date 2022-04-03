@@ -52,6 +52,7 @@ export default props => {
                         <NavLink name="Produtos" link="/Produtos" enable={props.page === "Produtos" ? true : false}/>
                         <NavLink name="Vendedores" link="/Vendedores" enable={props.page === "Vendedores" ? true : false}/>
                         <NavLink name="Sobre nós" link="/Sobre" enable={props.page === "Sobre" ? true : false}/>
+                        <NavLink name="Novos Vendedores" link="/cadastro/vendedores" enable={props.page === "cadastro vendedores" ? true : false}/>
                     </ul>
                 </div>
             </div>

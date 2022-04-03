@@ -5,6 +5,7 @@ import Contatos from './Pages/Contatos/Contatos';
 import Cadastro from './Pages/Cadastro/Cadastro';
 import CadastroVendedores from './Pages/Cadastro/CadastroVendedores';
 import Admin from './Pages/Admin/index';
+import Cesta from './Pages/Cesta/index';
 import QuemSomos from './Pages/QuemSomos/QuemSomos';
 import Produtos from './Pages/Produtos/Produtos';
 import Proximidade from './Pages/Proximidade/Proximidade';
@@ -19,6 +20,7 @@ ReactDOM.render(
         <Route path='/Cadastro' element={<Cadastro/>}></Route>
         <Route path='/Cadastro/Vendedores' element={<CadastroVendedores/>}></Route>
         <Route path='/Admin' element={<Admin/>}></Route>
+        <Route path='/Cesta' element={<Cesta/>}></Route>
         <Route path='/Vendedores' element={<Proximidade/>}></Route>
         <Route path='/Sobre' element={<QuemSomos/>}></Route>
         <Route path='/Produtos' element={<Produtos/>}></Route>

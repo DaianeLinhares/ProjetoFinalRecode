@@ -15,28 +15,28 @@ export default () => {
           <div class="row d-lg-flex justify-content-evenly mx-auto justify-content-lg-center membersList">
             <div class="col-6 col-sm-4 col-md-3 col-lg-2">
               <a href="https://github.com/DaianeLinhares" target="_blank"><img class="rounded-circle shadow" src="https://avatars.githubusercontent.com/u/91790650" loading="lazy" />
-                <div class="text-center d-xl-flex justify-content-xl-center attrTags"><span class="badge rounded-pill bg-info shadow-sm">Back-End</span></div>
+                <div class="text-center d-xl-flex justify-content-xl-center attrTags"><span class="badge rounded-pill bg-info shadow-sm">Full-Stack</span></div>
                 <h5 class="text-center d-flex justify-content-center align-items-center align-content-center">Daiane<br />Linhares</h5>
               </a>
             </div>
             <div class="col-6 col-sm-4 col-md-3 col-lg-2">
               <a href="https://github.com/Estefani-prog" target="_blank">
                 <img class="rounded-circle shadow" src="https://avatars.githubusercontent.com/u/84108238" loading="lazy" />
-                <div class="text-center d-xl-flex justify-content-xl-center attrTags"><span class="badge rounded-pill bg-primary shadow-sm">Front-End</span></div>
+                <div class="text-center d-xl-flex justify-content-xl-center attrTags"><span class="badge rounded-pill bg-primary shadow-sm">Full-Stack</span></div>
                 <h5 class="text-center d-flex justify-content-center align-items-center align-content-center">Estefani Monteiro</h5>
               </a>
             </div>
             <div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-2">
               <a href="https://github.com/Fredericoufsj" target="_blank">
                 <img class="rounded-circle shadow" src="https://avatars.githubusercontent.com/u/72985009" loading="lazy" />
-                <div class="text-center d-xl-flex justify-content-xl-center attrTags"><span class="badge rounded-pill bg-info shadow-sm">Back-End</span></div>
+                <div class="text-center d-xl-flex justify-content-xl-center attrTags"><span class="badge rounded-pill bg-danger shadow-sm">Full-Stack</span></div>
                 <h5 class="text-center d-flex justify-content-center align-items-center align-content-center">Frederico Thomaz</h5>
               </a>
             </div>
             <div class="col-6 col-sm-4 col-md-3 col-lg-2">
               <a href="https://github.com/JessicaLuana" target="_blank">
                 <img class="rounded-circle shadow" src="https://avatars.githubusercontent.com/u/88121822" loading="lazy" />
-                <div class="text-center d-xl-flex justify-content-xl-center attrTags"><span class="badge rounded-pill bg-warning text-dark shadow-sm">Scrum Master</span></div>
+                <div class="text-center d-xl-flex justify-content-xl-center attrTags"><span class="badge rounded-pill bg-warning  shadow-sm">Full-Stack</span></div>
                 <h5 class="text-center d-flex justify-content-center align-items-center align-content-center">Jéssica<br />Luana</h5>
               </a>
             </div>
@@ -50,7 +50,7 @@ export default () => {
             <div class="col-6 col-sm-4 col-md-3 col-lg-2">
               <a href="https://github.com/Bryceed" target="_blank">
                 <img class="rounded-circle shadow" src="https://avatars.githubusercontent.com/u/42657376" loading="lazy" />
-                <div class="text-center d-xl-flex justify-content-xl-center attrTags"><span class="badge rounded-pill bg-primary shadow-sm">Front-End</span></div>
+                <div class="text-center d-xl-flex justify-content-xl-center attrTags"><span class="badge rounded-pill bg-success shadow-sm">Full-Stack</span></div>
                 <h5 class="text-center d-flex justify-content-center align-items-center align-content-center">Wellington<br />Nascimento</h5>
               </a>
             </div>

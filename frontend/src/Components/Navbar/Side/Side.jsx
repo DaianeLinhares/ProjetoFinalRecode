@@ -31,9 +31,9 @@ export default () => {
                             </button>
                         </li>
                         <li class="nav-item">
-                            <button class="btn btn-outline-primary disabled" id="cart-basket" data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-placement="bottom" type="button" disabled="" title="Cesta vazia">
+                        <Link to="/Cesta">  <button class="btn btn-outline-primary " id="cart-basket" data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-placement="bottom" type="button" disabled="" title="Cesta vazia">
                                 <i class="fa fa-shopping-basket"></i>
-                            </button>
+                            </button></Link>
                         </li>
                     </ul>
                 </div>

@@ -83,12 +83,12 @@ const Formulario = () => {
                         <input required type="text" className="form-control" ref={estado} placeholder="Estado" aria-label="Estado" aria-describedby="addon-wrapping" />
                     </div>
 
-                    <div className="input-group flex-nowrap mt-4">
+                    <div className="input-group flex-nowrap mt-4 mb-4">
                         <span className="input-group-text" id="addon-wrapping">CEP</span>
                         <input required type="text" className="form-control" ref={cep} placeholder="Cep" aria-label="Cep" aria-describedby="addon-wrapping" />
                     </div>
-                    <br></br>
-                    <div className="col s12">
+                    
+                    <div className="col s12 ">
                         <button className="btn btn-sm btn-primary" type="submit">Enviar</button>
                     </div>
                 </form>
