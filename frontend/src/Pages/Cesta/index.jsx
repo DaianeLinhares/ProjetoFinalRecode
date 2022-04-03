@@ -17,7 +17,7 @@ const Formulario = () => {
   return (
     <div>
       <div className="container row">
-        <h5>Lista de Clientes</h5>
+        <h5>Lista de Produtos</h5>
         {produto.map((produto) => (
           <div key={produto.id}>
             <table class="table">
